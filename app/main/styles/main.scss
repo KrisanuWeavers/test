@@ -1,0 +1,294 @@
+/*
+To customize the look and feel of Ionic, you can override the variables
+in ionic's _variables.scss file.
+
+For example, you might change some of the default colors:
+*/
+
+$light:                           #fff !default;
+$stable:                          #f8f8f8 !default;
+$positive:                        #4a87ee !default;
+$calm:                            #43cee6 !default;
+$balanced:                        #66cc33 !default;
+$energized:                       #f0b840 !default;
+$assertive:                       #ef4e3a !default;
+$royal:                           #8a6de9 !default;
+$dark:                            #444 !default;
+
+// The path for our ionicons font files, relative to the built & temporary main.css
+$ionicons-font-path: "../assets/fonts" !default;
+
+// Include all of Ionic
+@import "../../bower_components/ionic/scss/ionic";
+
+
+
+// added via yo m-ionic:component subgenerator
+@import '../components/mini/mini-component';
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+.bar.bar-header {
+    background: #0173f8;
+    color: #fff;
+}
+.pane {
+    background-color: #e3e8fe;
+}
+.signin {
+    background: #0173f8;
+    .list{
+        margin: 0 20px;
+        .item {
+            background: none;
+            border: none;
+            img {
+                width: 70%;
+                margin: 40px auto 30px auto;
+                display: block;
+            }
+            input[type="text"], input[type="password"] {
+                background: url(../assets/images/ic_user_profile_2.png) no-repeat left center;
+                border: none;
+                border-bottom: 1px solid #fff;
+                color: #fff;
+                height: auto;
+                line-height: normal;
+                width: 100%;
+                padding: 15px 15px 15px 40px;
+                font-size: 15px;
+                font-family: 'Roboto', sans-serif;
+                font-weight: 300;
+            }
+            input[type="password"] {
+                background-image: url(../assets/images/ic_user_password_2.png);
+                margin-bottom: 40px;
+            }
+            input::-webkit-input-placeholder {
+                color: #fff;
+            }
+            input:-ms-input-placeholder {
+                color: #fff;
+            }
+            input::-moz-placeholder {
+                color: #fff;
+                opacity: 1;
+            }
+            input:-moz-placeholder {
+                color: #fff;
+                opacity: 1;
+            }
+            .sign-btn {
+                background: none;
+                border: 2px solid #fff;
+                border-radius: 50px;
+                padding: 10px 20px;
+                color: #fff;
+                text-transform: uppercase;
+                font-weight: 600;
+                width: 240px;
+                margin: 0 auto;
+                display: block;
+                font-size: 14px;
+            }
+            .account-btn {
+                background: #fff;
+                border: 2px solid #fff;
+                border-radius: 50px;
+                padding: 10px 20px;
+                color: #0173f8;
+                text-transform: uppercase;
+                font-weight: 600;
+                width: 240px;
+                margin: 0 auto;
+                display: block;
+                font-size: 14px;
+            }
+            .forgot-btn {
+                background: none;
+                border: none;
+                color: #fff;
+                text-transform: uppercase;
+                font-weight: 600;
+                width: 260px;
+                margin: 0 auto;
+                display: block;
+                font-size: 14px;
+            }
+        }
+    }
+    .facebook-login {
+        background: #3b5999;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        padding: 15px 0;
+        text-align: center;
+        img {
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+        span {
+            vertical-align: middle;
+            color: #fff;
+            font-weight: 700;
+        }
+    }
+}
+.signup {
+    .list {
+        .item {
+            background: none;
+            border: none;
+            padding: 0;
+            .photo-box {
+                .change-photo {
+                    position: relative;
+                    width: 120px;
+                    margin: 30px auto 0 auto;
+                    span {
+                        border-radius: 50%;
+                        display: block;
+                        width: 120px;
+                        overflow: hidden;
+                        height: 120px;
+                        margin: 0 auto;
+                        img {
+                            width: 100%;
+                        }
+                    }
+                    a {
+                        background: #0173f8;
+                        display: block;
+                        position: absolute;
+                        right: 0;
+                        bottom: 0px;
+                        width: 30px;
+                        height: 30px;
+                        border-radius: 50%;
+                        img {
+                            position: absolute;
+                            left: 50%;
+                            top: 50%;
+                            transform: translate(-50%,-50%);
+                        }
+                    }
+                }
+                p {
+                    text-align: center;
+                    font-weight: 700;
+                    color: #0173f8;
+                    margin: 20px 0 30px 0;
+                    font-size: 20px;
+                    line-height: normal;
+                }
+            }
+            .user-form {
+                background: #f7f7ff;
+                padding: 30px;
+                label {
+                    font-weight: 700;
+                    color: #383f52;
+                    display: block;
+                }
+                input {
+                    background: none;
+                    border: none;
+                    border-bottom: 2px solid #8990a3;
+                    width: 100%;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+    .profile-bottom {
+        background: #e3e8fe;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        padding: 10px 20px;
+        p {
+            display: inline-block;
+            font-weight: 700;
+            color: #383f52;
+            margin: 10px 0 0 0;
+            font-size: 1em;
+            text-transform: uppercase;
+        }
+        a {
+            background: #0173f8;
+            color: #fff;
+            border-radius: 30px;
+            display: block;
+            float: right;
+            padding: 10px 20px;
+            text-transform: uppercase;
+            font-weight: 700;
+            line-height: normal;
+            text-decoration: none;
+        }
+    }
+}
+.info-wrap {
+    background: #f7f7ff;
+    .list {
+        .item {
+            h1 {
+                color: #0173f8;
+                font-family: 'Roboto', sans-serif;
+                font-weight: 700;
+                font-size: 2.5em;
+                margin: 20px 0 30px 0;
+                white-space: normal;
+                line-height: normal;
+            }
+            h2 {
+                color: #9c9b9f;
+                font-family: 'Roboto', sans-serif;
+                font-weight: 400;
+                white-space: normal;
+                font-size: 1.5em;
+                margin: 0 0 20px 0;
+                line-height: normal;
+            }
+            .info-box {
+                padding-bottom:50px; 
+                span {
+                    background: #e3e8fe;
+                    display: block;
+                    overflow: hidden;
+                    position: relative;
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 50%;
+                    margin:0 auto; 
+                    img {
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%,-50%);
+                        width: 60%;
+                    }
+                }
+                p {                   
+                    color: #9c9b9f;
+                    font-family: 'Roboto', sans-serif;
+                    font-weight: 400;
+                    font-size: 14px;
+                    margin: 10px 0;
+                    text-align: center;
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+}
+
+
+

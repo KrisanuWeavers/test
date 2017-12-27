@@ -1,0 +1,17 @@
+{
+  "generator-m-ionic": {
+    "answers": {
+      "appName": "HagTap",
+      "appId": "com.tm.hagtap",
+      "ionicCss": false,
+      "bowerPackages": [],
+      "platforms": [],
+      "plugins": [
+        "cordova-plugin-device"
+      ],
+      "appModule": "HagTap",
+      "ecosystems": [],
+      "install": "npm"
+    }
+  }
+}
