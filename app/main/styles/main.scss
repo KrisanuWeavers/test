@@ -39,6 +39,21 @@ body {
 .pane {
     background-color: #e3e8fe;
 }
+.bar-positive .button.button-clear {
+    padding: 0px 20px 0 10px;
+    line-height: normal;
+    font-size: 14px;
+    border-radius: 50px;
+    border: 2px solid #fff;
+    i.icon:before {
+        font-size: 20px;
+        line-height: 20px;
+    }
+    span {
+        vertical-align: middle;
+        text-transform: uppercase;
+    }
+}
 .signin {
     background: #0173f8;
     .list{
@@ -244,7 +259,7 @@ body {
                 font-family: 'Roboto', sans-serif;
                 font-weight: 700;
                 font-size: 2.5em;
-                margin: 20px 0 30px 0;
+                margin: 20px 0 10px 0;
                 white-space: normal;
                 line-height: normal;
             }
@@ -289,6 +304,78 @@ body {
         }
     }
 }
+.for-pas {
+    .list {
+        .item {
+            h1 {
+                background: url(../assets/images/ic_locked_lock.png) no-repeat right center;
+                background-size: 16% auto;
+            }
+            .user-form{
+                margin-top:3em;
+                input {
+                    border-color:#0173f8;
+                }
+            }
+        }
+    }
+}
+.checkbox-custom {
+    opacity: 0;
+    position: absolute;   
+}
+.checkbox-custom, .signup .list .item .user-form label.checkbox-custom-label {
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+    color:#0173f8;
+    font-weight: 400;
+}
+.checkbox-custom-label {
+    position: relative;
+    line-height: normal;
+    strong {
+        font-weight: 700;
+    }
+}
+.checkbox-custom + .checkbox-custom-label:before {
+    content: '';
+    background: none;
+    border: 2px solid #0173f8;
+    display: inline-block;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    padding: 2px;
+    margin-right: 10px;
+    text-align: center;
+	border-radius:5px;
+}
+.checkbox-custom:checked + .checkbox-custom-label:before {
+    content: "\f00c";
+    font-family: 'FontAwesome';
+    background: #0173f8;
+    color: #fff;
+}
+.radio-custom:checked + .radio-custom-label:before {
+    content: "\f00c";
+    font-family: 'FontAwesome';
+    color: #fff;
+}
+.checkbox-custom:focus + .checkbox-custom-labe {
+  outline: 1px solid #ddd;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 

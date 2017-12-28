@@ -31,6 +31,11 @@ angular.module('main', [
         templateUrl: 'main/templates/signin.html',
         controller: 'SignupCtrl as ctrl'
       })
+      .state('forgot-password', {
+        url: '/forgot-password',
+        templateUrl: 'main/templates/forgot-password.html',
+        controller: 'ForgotPasswordCtrl as ctrl'
+      })
       .state('main', {
         url: '/main',
         abstract: true,

@@ -1,15 +1,25 @@
-<ion-tabs class="tabs-icon-top tabs-assertive">
+<ion-tabs class="tabs-icon-top">
 
   <!-- List Tab -->
-  <ion-tab title="List" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong"
+  <ion-tab title="explore" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong"
     ui-sref="main.list">
     <ion-nav-view name="tab-list"></ion-nav-view>
   </ion-tab>
 
   <!-- Debug Tab -->
-  <ion-tab title="Debug" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear"
+  <ion-tab title="articles" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear"
     ui-sref="main.debug">
     <ion-nav-view name="tab-debug"></ion-nav-view>
   </ion-tab>
+
+  <ion-tab title="alerts" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear"
+  ui-sref="main.debug">
+  <ion-nav-view name="tab-debug"></ion-nav-view>
+</ion-tab>
+
+<ion-tab title="Debug" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear"
+ui-sref="main.debug">
+<ion-nav-view name="tab-debug"></ion-nav-view>
+</ion-tab>
 
 </ion-tabs>
