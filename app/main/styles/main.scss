@@ -37,7 +37,7 @@ body {
     color: #fff;
 }
 .pane {
-    background-color: #e3e8fe;
+    background-color: #f7f7ff;
 }
 .bar-positive .button.button-clear {
     padding: 0px 20px 0 10px;
@@ -320,6 +320,47 @@ body {
         }
     }
 }
+.tabs { 
+    background: none;
+    height: auto;
+    padding: 0;
+    .tab-item {
+        padding: 5px 0;
+        opacity: 1;
+        span {
+            text-transform: uppercase;
+            font-size: 12px;
+            font-weight: 400;
+            font-family: 'Roboto', sans-serif;
+        }
+        .explore-icon {
+            background: url(../assets/images/ic_explore.png) no-repeat center top;
+            background-size:contain;
+        }
+        .articles-icon {
+            background: url(../assets/images/ic_article.png) no-repeat center top;
+            background-size:contain;
+        }
+        .alerts-icon {
+            background: url(../assets/images/ic_alert.png) no-repeat center top;
+            background-size:contain;
+        }
+        .profile-icon {
+            background: url(../assets/images/ic_profile.png) no-repeat center top;
+            background-size:contain;
+        }
+    }
+    .tab-item-active {
+        background: #e3e8fe;
+    }
+}
+.has-tabs, .bar-footer.has-tabs {
+    bottom: 57px;
+}
+
+
+
+
 .checkbox-custom {
     opacity: 0;
     position: absolute;   

@@ -1,6 +1,6 @@
 'use strict';
 
-describe('module: main, controller: Forgot-passwordCtrl', function () {
+describe('module: main, controller: ForgotPasswordCtrl', function () {
 
   // load the controller's module
   beforeEach(module('main'));
@@ -8,13 +8,13 @@ describe('module: main, controller: Forgot-passwordCtrl', function () {
   beforeEach(module('ngHtml2Js'));
 
   // instantiate controller
-  var Forgot-passwordCtrl;
+  var ForgotPasswordCtrl;
   beforeEach(inject(function ($controller) {
-    Forgot-passwordCtrl = $controller('Forgot-passwordCtrl');
+    ForgotPasswordCtrl = $controller('ForgotPasswordCtrl');
   }));
 
   it('should do something', function () {
-    expect(!!Forgot-passwordCtrl).toBe(true);
+    expect(!!ForgotPasswordCtrl).toBe(true);
   });
 
 });
