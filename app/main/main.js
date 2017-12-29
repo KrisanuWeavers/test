@@ -2,10 +2,11 @@
 angular.module('main', [
   'ionic',
   'ngCordova',
-  'ui.router'
+  'ui.router',
+  'ksSwiper'
   // TODO: load other modules selected during generation
 ])
-  .config(function ($stateProvider, $urlRouterProvider) {
+  .config(function ($stateProvider) {
 
     // ROUTING with ui.router
     //$urlRouterProvider.otherwise('/home');
