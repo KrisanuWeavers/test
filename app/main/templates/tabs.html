@@ -1,6 +1,14 @@
 <ion-tabs class="tabs-icon-top">
-  <ion-tab title="explore" icon-off="explore-icon" icon-on="explore-icon" ui-sref="main.listTab.list"><ion-nav-view name="tab-list"></ion-nav-view></ion-tab>
-  <ion-tab title="articles" icon-off="articles-icon" icon-on="articles-icon"></ion-tab>
-  <ion-tab title="alerts" icon-off="alerts-icon" icon-on="alerts-icon"></ion-tab>
-  <ion-tab title="profile" icon-off="profile-icon" icon-on="profile-icon"></ion-tab>
+  <ion-tab title="explore" icon-off="explore-icon" icon-on="explore-icon" ui-sref="main.listTab.list">
+    <ion-nav-view name="tab-list"></ion-nav-view>
+  </ion-tab>
+  <ion-tab title="articles" icon-off="articles-icon" icon-on="articles-icon" ui-sref="main.articlesTab.articles">
+    <ion-nav-view name="tab-articles"></ion-nav-view>
+  </ion-tab>
+  <ion-tab title="alerts" icon-off="alerts-icon" icon-on="alerts-icon" ui-sref="main.tabAlerts.alerts">
+    <ion-nav-view name="tab-alerts"></ion-nav-view>
+  </ion-tab>
+  <ion-tab title="profile" icon-off="profile-icon" icon-on="profile-icon" ui-sref="main.tabProfile.profile">
+    <ion-nav-view name="tab-profile"></ion-nav-view>
+  </ion-tab>
 </ion-tabs>

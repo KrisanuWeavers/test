@@ -60,6 +60,33 @@ angular.module('main', [
           }
         }
       })
+      .state('main.articles', {
+        url: '/articles',
+        views: {
+          'tab-articles': {
+            templateUrl: 'main/templates/articles.html',
+            controller: 'ArticlesCtrl as ctrl'
+          }
+        }
+      })
+      .state('main.alerts', {
+        url: '/alerts',
+        views: {
+          'tab-alerts': {
+            templateUrl: 'main/templates/alerts.html',
+            controller: 'AlertsCtrl as ctrl'
+          }
+        }
+      })
+      .state('main.profile', {
+        url: '/profile',
+        views: {
+          'tab-profile': {
+            templateUrl: 'main/templates/profile.html',
+            controller: 'ProfileCtrl as ctrl'
+          }
+        }
+      })
       .state('main.debug', {
         url: '/debug',
         views: {

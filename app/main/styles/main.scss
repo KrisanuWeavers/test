@@ -161,6 +161,14 @@ body {
             background: none;
             border: none;
             padding: 0;
+            h3 {                
+                font-family: 'Roboto', sans-serif;
+                font-weight: 700;
+                white-space: normal;
+                margin: 10px 0 20px 0;
+                text-transform: uppercase;
+                font-size: 16px;
+            }
             .photo-box {
                 .change-photo {
                     position: relative;
@@ -218,6 +226,20 @@ body {
                     width: 100%;
                     margin-bottom: 20px;
                 }
+            }
+        }
+        .events-box {
+            padding: 15px;
+            h3 {
+                margin-bottom: 10px;
+            }
+            h4 {
+                font-family: 'Roboto', sans-serif;
+                font-weight: 700;
+                text-transform: uppercase;
+                color: #77767b;
+                font-size: 12px;
+                margin-bottom: 20px;
             }
         }
     }
@@ -375,9 +397,24 @@ body {
                 color: #ef8ca0;
                 font-size: 12px;
             }
+            h3 {
+                text-transform: uppercase;
+                font-family: 'Roboto', sans-serif;
+                font-weight: 400;
+                white-space: normal;
+                font-size: 18px;
+                line-height: normal;
+                color: #373f51;
+            }
+            h4 {
+                font-family: 'Roboto', sans-serif;
+                font-weight: 700;
+                white-space: normal;
+                font-size: 14px;
+            }
         }
     }
-    .item-avatar {
+    .item {
         padding-left: 110px;
         margin-bottom: 4px;
         border-top: none;
@@ -387,10 +424,151 @@ body {
             max-height: 80px;
         }
     }
+    .pro-banner {
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,0061ca+100 */
+        background: #000000; /* Old browsers */
+        background: -moz-linear-gradient(left, #000000 0%, #0061ca 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(left, #000000 0%,#0061ca 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to right, #000000 0%,#0061ca 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#0061ca',GradientType=1 ); /* IE6-9 */
+
+        position: relative;
+        overflow: hidden;
+        height: 200px;
+        color: #fff;
+        padding: 30px;
+        margin-bottom: 4px;
+        h2 {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            white-space: normal;
+            font-size: 24px;
+            color: #fff;
+            margin: 0;
+            float: left;
+            span {
+                display: block;
+                font-size: 18px;
+                color: #ccc;
+            }
+        }
+        strong {
+            display: block;
+            font-size: 18px;
+            position: absolute;
+            font-weight: 400;
+            left: 30px;
+            bottom: 30px;
+        }
+        a {           
+            display: block;
+            position: absolute;
+            right: 30px;
+            top: 30px;
+            width: 4em;
+            text-align: center;
+            img{
+                width:100%;
+            }
+            span {
+                display: block;
+                color: #fff;
+            }
+        }
+    }
 }
-
-
-
+.alerts-box {
+    background:#fff;
+    border:1px solid #ccc;
+    padding: 30px;
+    img {
+        width: 24%;
+        display: inline-block;
+        vertical-align: middle;
+    }
+    span {
+        width: 80%;
+        display: inline-block;
+        vertical-align: middle;
+        color: #000;
+        margin-left: 2%;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 700;
+        white-space: normal;
+    }
+}
+.setting-wrap {
+    .list {
+        .item{
+            padding-left: 90px;
+            >img {
+                width: 60px;
+                height: 60px;
+            }
+            h2 {
+                font-size: 14px;
+                font-family: 'Roboto', sans-serif;
+                font-weight: 900;
+                line-height: normal;
+                margin: 0 0 14px 0;
+            }
+            p {
+                font-size: 22px;
+                font-family: 'Roboto', sans-serif;
+                line-height: normal;
+                color: #000;
+            }
+        }
+    }
+}
+.profile-banner {
+    background: #fff;
+    padding: 20px;
+    overflow: hidden;
+    position: relative;
+    span {
+        width: 80px;
+        height: 80px;
+        overflow: hidden;
+        position: relative;
+        display: inline-block;
+        img {
+            border-radius: 50%;
+            width: 100%;
+        }
+    }
+    p {
+        overflow: hidden;
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+        margin-left: 10px;
+        font-size: 16px;
+        color: #000;
+        strong {
+            color: #0079fe;
+        }
+    }
+    >div {
+        margin-top: 10px;
+        text-align: center;
+            a {
+                border: 2px solid #0079fe;
+                display: inline-block;
+                border-radius: 4px;
+                text-transform: uppercase;
+                width: 46%;
+                margin: 0 5px;
+                text-align: center;
+                font-weight: 700;
+                padding: 10px;
+            }
+            a:first-child {
+                background:rgba(0, 121, 254, 0.1) url(../assets/images/ic_warning.png) no-repeat 10px center;
+                background-size: 30px auto;
+            }
+    }
+}
 
 
 .checkbox-custom {
@@ -483,7 +661,7 @@ body {
     }
 }
 .has-subheader {
-    top: 115px;
+    top: 111px;
 }
 
 
@@ -516,7 +694,7 @@ body {
             vertical-align: middle;
             margin-left: 8px;
             img {
-                width: 34px;
+                width: 2.4em;
             }
         }
     }
