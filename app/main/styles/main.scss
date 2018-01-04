@@ -349,6 +349,8 @@ body {
     .tab-item {
         padding: 5px 0;
         opacity: 1;
+        border: none !important;
+        margin: 0 !important;
         span {
             text-transform: uppercase;
             font-size: 12px;
@@ -502,8 +504,10 @@ body {
         .item{
             padding-left: 90px;
             >img {
-                width: 60px;
-                height: 60px;
+                width: 40px;
+                height: auto;
+                left: 20px;
+                top: 30px;
             }
             h2 {
                 font-size: 14px;
@@ -513,10 +517,38 @@ body {
                 margin: 0 0 14px 0;
             }
             p {
-                font-size: 22px;
+                font-size: 18px;
                 font-family: 'Roboto', sans-serif;
                 line-height: normal;
                 color: #000;
+                &+a {
+                    background:url(../assets/images/ic_warning.png) no-repeat left center;
+                    background-size: 20px auto;
+                    padding-left: 26px;
+                    font-weight: 700;
+                }
+            }
+            ul {
+                float: right;
+                margin: 10px -34px 0 0;
+                li {
+                    background: #f7f7ff;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    display: inline-block;
+                    vertical-align: middle;
+                    position: relative;
+                    overflow: hidden;
+                    img {
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%,-50%);
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
             }
         }
     }
@@ -699,3 +731,197 @@ body {
         }
     }
 }
+.event-details {
+    .bar.bar-header {
+        background:none;
+        .top-header {
+            background:none;
+        }
+    }
+    .list {
+        .item {
+            padding: 0;
+            background: none;
+            border: none;
+            .event-banner {
+                position: relative;
+                overflow: hidden;
+                img {
+                    width: 100%;
+                }
+                span {
+                    position: absolute;
+                    right: 10px;
+                    bottom: 10px;
+                    img {
+                        width: 2em;
+                    }
+                }
+            }
+            .events-info {
+                background: #fff;
+                padding: 20px;
+                h2 {
+                    font-weight: 700;
+                    font-size: 1.5em;
+                    color: #000;
+                    font-family: 'Roboto', sans-serif;
+                    white-space: normal;
+                    margin: 0 0 10px 0;
+                }
+                h3 {
+                    margin: 0 0 20px 0;
+                    img {
+                        vertical-align: middle;
+                        display: inline-block;
+                        width: 1em;
+                    }
+                    span {
+                        vertical-align: middle;
+                        display: inline-block;
+                        font-weight: 700;
+                        font-size: 1em;
+                        color: #0173f8;
+                        font-family: 'Roboto', sans-serif;
+                        text-transform: uppercase;
+                    }
+                }
+                .time {
+                    position: relative;
+                    font-family: 'Roboto', sans-serif;
+                    font-size: 12px;
+                    color: #000;
+                    margin: 0 0 20px 0;
+                    span {
+                        float: left;
+                        background: #fff;
+                        position: relative;
+                        padding-right:10px; 
+                        z-index: 9;
+                        &:last-child {
+                            float: right;
+                            padding: 0 0 0 10px; 
+                        }
+                    }
+                    img {
+                        width: 1.5em;
+                        position: relative;
+                        z-index: 9;
+                        margin-top: 2px;
+                    }
+                    &:after {
+                        background: #0173f8;
+                        position: absolute;
+                        content: "";
+                        height: 1px;
+                        width: 100%;
+                        left: 0;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        pointer-events: none;
+                    }
+                }
+                h4 {
+                    font-family: 'Roboto', sans-serif;
+                    font-size: 14px;
+                    text-transform: uppercase;
+                    font-weight: 700;
+                    margin: 0 0 20px 0;
+                }
+                p {
+                    color: #000; 
+                }
+            }
+            .venue-info {
+                margin: 15px;
+                h2 {
+                    font-family: 'Roboto', sans-serif;
+                    font-size: 14px;
+                    text-transform: uppercase;
+                    font-weight: 700;
+                    margin: 0 0 10px 0;
+                    a {
+                        background: url(../assets/images/ic_right_arrow.png) no-repeat right center;
+                        display: inline-block;
+                        vertical-align: middle;
+                        padding: 0 18px 0 0;
+                        margin: 0 10px 0 0;
+                        background-size: 8px auto;
+                    }
+                    span {
+                        display: inline-block;
+                        vertical-align: middle;
+                    }
+                }
+                .venue-img {
+                    background: #000;
+                    position: relative;
+                    overflow: hidden;
+                    h3 {
+                        font-family: 'Roboto', sans-serif;
+                        font-size: 18px;
+                        font-weight: 400;
+                        color: #fff;
+                        position: absolute;
+                        left: 20px;
+                        top: 20px;
+                    }
+                    span {
+                        background: url(../assets/images/ic_venue_close.png) no-repeat left center;
+                        color: #fff;
+                        display: block;
+                        position: absolute;
+                        left: 20px;
+                        bottom: 20px;
+                        line-height: normal;
+                        font-size: 12px;
+                        padding: 0 0 0 24px;
+                        background-size: 14px auto;
+                    }
+                    img {
+                        width: 100%;
+                        float: left;
+                    }                    
+                }
+            }
+            .location-info {
+                background: #eb5270;
+                padding: 10px 20px;
+                p {
+                    display: inline-block;
+                    vertical-align: middle;
+                    margin: 0;
+                    white-space: normal;
+                    width: 70%;
+                    img {
+                        width: 30px;
+                        display: inline-block;
+                        vertical-align: middle;
+                        margin-right: 5px;
+                    }
+                    span {
+                        display: inline-block;
+                        vertical-align: middle;
+                        color: #fff;
+                        width:60%;
+                    }
+                    strong {
+                        color: #fff;
+                    }
+                    &:last-child {
+                        width: 30%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+

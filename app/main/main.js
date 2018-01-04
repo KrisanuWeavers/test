@@ -95,5 +95,17 @@ angular.module('main', [
             controller: 'DebugCtrl as ctrl'
           }
         }
+      })
+      .state('event-details', {
+        url: '/event-details',
+        templateUrl: 'main/templates/event-details.html',
+        controller: 'EventDetailsCtrl as ctrl'
       });
+  })
+  .config(function ($ionicConfigProvider) {
+    $ionicConfigProvider.views.maxCache(5);
+    // note that you can also chain configs
+    $ionicConfigProvider.backButton.text('').icon('ion-android-arrow-back').previousTitleText(false);
+    $ionicConfigProvider.tabs.position('bottom');
+    $ionicConfigProvider.navBar.alignTitle('center');
   });
