@@ -1,6 +1,6 @@
 'use strict';
 
-describe('module: main, controller: Event-detailsCtrl', function () {
+describe('module: main, controller: EventDetailsCtrl', function () {
 
   // load the controller's module
   beforeEach(module('main'));
@@ -8,13 +8,12 @@ describe('module: main, controller: Event-detailsCtrl', function () {
   beforeEach(module('ngHtml2Js'));
 
   // instantiate controller
-  var Event-detailsCtrl;
+  var EventDetailsCtrl;
   beforeEach(inject(function ($controller) {
-    Event-detailsCtrl = $controller('Event-detailsCtrl');
+    EventDetailsCtrl = $controller('EventDetailsCtrl');
   }));
 
   it('should do something', function () {
-    expect(!!Event-detailsCtrl).toBe(true);
+    expect(!!Event - EventDetailsCtrl).toBe(true);
   });
-
 });

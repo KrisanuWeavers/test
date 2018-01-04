@@ -80,5 +80,8 @@
         "proxyMapTo": "https://echo.getpostman.com"
       }
     ]
+  },
+  "dependencies": {
+    "cordova-android": "^7.0.0"
   }
 }

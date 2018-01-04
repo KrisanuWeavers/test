@@ -6,10 +6,10 @@ angular.module('main', [
   'ksSwiper'
   // TODO: load other modules selected during generation
 ])
-  .config(function ($stateProvider) {
+  .config(function ($stateProvider, $urlRouterProvider) {
 
     // ROUTING with ui.router
-    //$urlRouterProvider.otherwise('/home');
+    $urlRouterProvider.otherwise('/signin');
     $stateProvider
       // this state is placed in the <ion-nav-view> in the index.html
       .state('home', {
@@ -30,7 +30,7 @@ angular.module('main', [
       .state('signin', {
         url: '/signin',
         templateUrl: 'main/templates/signin.html',
-        controller: 'SignupCtrl as ctrl'
+        controller: 'SigninCtrl as ctrl'
       })
       .state('forgot-password', {
         url: '/forgot-password',
@@ -96,7 +96,7 @@ angular.module('main', [
           }
         }
       })
-      .state('event-details', {
+      .state('eventDetails', {
         url: '/event-details',
         templateUrl: 'main/templates/event-details.html',
         controller: 'EventDetailsCtrl as ctrl'
