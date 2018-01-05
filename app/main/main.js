@@ -115,6 +115,11 @@ angular.module('main', [
         url: '/event-details',
         templateUrl: 'main/templates/event-details.html',
         controller: 'EventDetailsCtrl as ctrl'
+      })
+      .state('article-details', {
+        url: '/article-details',
+        templateUrl: 'main/templates/article-details.html',
+        controller: 'ArticleDetailsCtrl as ctrl'
       });
   })
   .config(function ($ionicConfigProvider) {

@@ -1,18 +1,30 @@
-<ion-view view-title="Setting" class="signup info-wrap for-pas">
+<ion-view hide-nav-bar="true" view-title="Setting" class="signup for-pas phone">
   <!-- do you want padding? -->
-  <ion-content class="padding">
+  <ion-content class="padding" has-header="false">
 
     <!-- content goes here -->
     <div class="list">
         <div class="item">
-          <h3>Enter your phone number</h3>
+          <h4>Enter your phone number</h4>
         </div>
-        <div class="item">
-          
-        </div>
+        
+        <div class="item item-input item-select">
+            <div class="input-label">
+              India +91
+            </div>
+            <select>
+                <option></option>
+                <option>+1</option>
+                <option>+2</option>
+                <option>+3</option>
+            </select>
+          </div>
+
+
         <div class="item">
             <div class="user-form">
                 <input type="tel" name="tel" placeholder="Your Number" />
+                <button>Send confirmation code</button>
             </div>
         </div>
         <div class="item">
