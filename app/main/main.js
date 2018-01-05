@@ -51,15 +51,6 @@ angular.module('main', [
           }
         }
       })
-      .state('main.listDetail', {
-        url: '/list/detail',
-        views: {
-          'tab-list': {
-            templateUrl: 'main/templates/list-detail.html',
-            // controller: 'SomeCtrl as ctrl'
-          }
-        }
-      })
       .state('main.articles', {
         url: '/articles',
         views: {
@@ -86,6 +77,30 @@ angular.module('main', [
             controller: 'ProfileCtrl as ctrl'
           }
         }
+      })
+      .state('main.setting', {
+        url: '/profile/setting',
+        views: {
+          'tab-profile': {
+            templateUrl: 'main/templates/setting.html',
+            controller: 'SettingCtrl as ctrl'
+          }
+        }
+      })
+      .state('edit-profile', {
+        url: '/edit-profile',
+        templateUrl: 'main/templates/edit-profile.html',
+        controller: 'EditProfileCtrl as ctrl'
+      })
+      .state('change-password', {
+        url: '/change-password',
+        templateUrl: 'main/templates/change-password.html',
+        controller: 'ChangePasswordCtrl as ctrl'
+      })
+      .state('phone', {
+        url: '/phone',
+        templateUrl: 'main/templates/phone.html',
+        controller: 'PhoneCtrl as ctrl'
       })
       .state('main.debug', {
         url: '/debug',

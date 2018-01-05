@@ -1,0 +1,43 @@
+<ion-view view-title="Edit Profile"  class="pro-list edit-profile">
+  <!-- do you want padding? -->
+  <ion-content class="no-padding">
+
+    <!-- content goes here -->
+    <div class="list">
+      <div class="item item-avatar">
+        <img src="main/assets/images/ic_default_user_photo.png" alt="" />
+          <h2>Change your profile photo</h2>
+          <a href="#" class="upload-photo">upload</a>
+          <a href="#" class="take-photo">take photo</a>
+      </div>
+      <div class="item">
+        <h2>required info</h2>
+        <label>First Name</label>
+        <input type="text" name="" value="" />
+        <label>Last Name</label>
+        <input type="text" name="" value="" />
+        <label>Email</label>
+        <input type="email" name="" value="" />
+      </div>
+      <div class="item">
+        <h2>additional info</h2>
+        <label>Birthday</label>
+        <input type="text" name="" value="" />
+        <label>Gender</label>
+        <div class="gender-wrap">
+            <div class="radio-custom"><input type="radio" name="gender" value="male" id="male" /> <label for="male">Male</label></div>
+            <div class="radio-custom"><input type="radio" name="gender" value="female" id="female" /> <label for="female">Female</label></div>
+        </div>
+        <label>Website</label>
+        <input type="text" name="" placeholder="http://yourexample.com" />
+        <label>Bio</label>
+        <textarea placeholder="I'm badass that just downloaded the best app ever..."></textarea>
+      </div>
+    </div>
+
+  </ion-content>
+  <div class="profile-bottom">
+    <p>Your profile is important</p>
+    <a>Save Changes</a>
+  </div>
+</ion-view>
