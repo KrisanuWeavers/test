@@ -1,6 +1,6 @@
 'use strict';
 
-describe('module: main, controller: Edit-profileCtrl', function () {
+describe('module: main, controller: EditProfileCtrl', function () {
 
   // load the controller's module
   beforeEach(module('main'));
@@ -8,13 +8,12 @@ describe('module: main, controller: Edit-profileCtrl', function () {
   beforeEach(module('ngHtml2Js'));
 
   // instantiate controller
-  var Edit-profileCtrl;
+  var EditProfileCtrl;
   beforeEach(inject(function ($controller) {
-    Edit-profileCtrl = $controller('Edit-profileCtrl');
+    EditProfileCtrl = $controller('EditProfileCtrl');
   }));
 
   it('should do something', function () {
-    expect(!!Edit-profileCtrl).toBe(true);
+    expect(!!EditProfileCtrl).toBe(true);
   });
-
 });

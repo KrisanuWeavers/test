@@ -1,7 +1,7 @@
 'use strict';
 angular.module('main')
-  .controller('EventDetailsCtrl', function ($log, $scope, $ionicScrollDelegate, $window) {
-
+  .controller('EventDetailsCtrl', function ($log, $scope, $ionicScrollDelegate, $window, $state) {
+    var ctrl = this;
     $log.log('Hello from your Controller: EventDetailsCtrl in module main:. This is your controller:', this);
     /**********************************
      * Change header bar background transparent to color alpha when scrolling
@@ -18,8 +18,7 @@ angular.module('main')
 
     angular.element(document).ready(function () {
       document.getElementById('myFunction').onscroll = function () {
-
-        console.log('scrolling!');
+        $log.log('scrolling!');
         $scope.changeHeader('ben-header');
 
       };
@@ -27,4 +26,7 @@ angular.module('main')
     /********************************************
      * Change header bar background end
     *********************************************/
+    ctrl.goBack = function () {
+      $state.go('main.list');
+    };
   });

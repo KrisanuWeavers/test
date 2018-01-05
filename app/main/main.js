@@ -116,7 +116,7 @@ angular.module('main', [
         templateUrl: 'main/templates/event-details.html',
         controller: 'EventDetailsCtrl as ctrl'
       })
-      .state('article-details', {
+      .state('articleDetails', {
         url: '/article-details',
         templateUrl: 'main/templates/article-details.html',
         controller: 'ArticleDetailsCtrl as ctrl'

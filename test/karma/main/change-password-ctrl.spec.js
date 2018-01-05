@@ -1,6 +1,6 @@
 'use strict';
 
-describe('module: main, controller: Change-passwordCtrl', function () {
+describe('module: main, controller: ChangePasswordCtrl', function () {
 
   // load the controller's module
   beforeEach(module('main'));
@@ -8,13 +8,13 @@ describe('module: main, controller: Change-passwordCtrl', function () {
   beforeEach(module('ngHtml2Js'));
 
   // instantiate controller
-  var Change-passwordCtrl;
+  var ChangePasswordCtrl;
   beforeEach(inject(function ($controller) {
-    Change-passwordCtrl = $controller('Change-passwordCtrl');
+    ChangePasswordCtrl = $controller('ChangePasswordCtrl');
   }));
 
   it('should do something', function () {
-    expect(!!Change-passwordCtrl).toBe(true);
+    expect(!!ChangePasswordCtrl).toBe(true);
   });
 
 });
