@@ -116,6 +116,21 @@ angular.module('main', [
         templateUrl: 'main/templates/event-details.html',
         controller: 'EventDetailsCtrl as ctrl'
       })
+      .state('venueInfo', {
+        url: '/venue-info',
+        templateUrl: 'main/templates/venue-info.html',
+        controller: 'VenueInfoCtrl as ctrl'
+      })
+      .state('VenueEvents', {
+        url: '/venue-events',
+        templateUrl: 'main/templates/venue-events.html',
+        controller: 'VenueEventsCtrl as ctrl'
+      })
+      .state('VenueArticles', {
+        url: '/venue-articles',
+        templateUrl: 'main/templates/venue-articles.html',
+        controller: 'VenueArticlesCtrl as ctrl'
+      })
       .state('articleDetails', {
         url: '/article-details',
         templateUrl: 'main/templates/article-details.html',
