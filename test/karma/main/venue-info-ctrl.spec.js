@@ -1,6 +1,6 @@
 'use strict';
 
-describe('module: main, controller: Venue-infoCtrl', function () {
+describe('module: main, controller: VenueInfoCtrl', function () {
 
   // load the controller's module
   beforeEach(module('main'));
@@ -8,13 +8,13 @@ describe('module: main, controller: Venue-infoCtrl', function () {
   beforeEach(module('ngHtml2Js'));
 
   // instantiate controller
-  var Venue-infoCtrl;
+  var VenueInfoCtrl;
   beforeEach(inject(function ($controller) {
-    Venue-infoCtrl = $controller('Venue-infoCtrl');
+    VenueInfoCtrl = $controller('VenueInfoCtrl');
   }));
 
   it('should do something', function () {
-    expect(!!Venue-infoCtrl).toBe(true);
+    expect(!!VenueInfoCtrl).toBe(true);
   });
 
 });
