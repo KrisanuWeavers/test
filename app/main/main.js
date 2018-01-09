@@ -116,21 +116,53 @@ angular.module('main', [
         templateUrl: 'main/templates/event-details.html',
         controller: 'EventDetailsCtrl as ctrl'
       })
-      .state('venueInfo', {
-        url: '/venue-info',
-        templateUrl: 'main/templates/venue-info.html',
-        controller: 'VenueInfoCtrl as ctrl'
+      .state('venue', {
+        url: '/venue',
+        abstract: true,
+        templateUrl: 'main/templates/tabs-venue.html'
       })
-      .state('VenueEvents', {
-        url: '/venue-events',
-        templateUrl: 'main/templates/venue-events.html',
-        controller: 'VenueEventsCtrl as ctrl'
+      .state('venue.info', {
+        url: '/info',
+        views: {
+          'tab-venue-info': {
+            templateUrl: 'main/templates/venue-info.html',
+            controller: 'VenueInfoCtrl as ctrl'
+          }
+        }
       })
-      .state('VenueArticles', {
-        url: '/venue-articles',
-        templateUrl: 'main/templates/venue-articles.html',
-        controller: 'VenueArticlesCtrl as ctrl'
+      .state('venue.events', {
+        url: '/events',
+        views: {
+          'tab-venue-events': {
+            templateUrl: 'main/templates/venue-events.html',
+            controller: 'VenueEventsCtrl as ctrl'
+          }
+        }
       })
+      .state('venue.articles', {
+        url: '/articles',
+        views: {
+          'tab-venue-articles': {
+            templateUrl: 'main/templates/venue-articles.html',
+            controller: 'VenueArticlesCtrl as ctrl'
+          }
+        }
+      })
+      // .state('venueInfo', {
+      //   url: '/venue-info',
+      //   templateUrl: 'main/templates/venue-info.html',
+      //   controller: 'VenueInfoCtrl as ctrl'
+      // })
+      // .state('VenueEvents', {
+      //   url: '/venue-events',
+      //   templateUrl: 'main/templates/venue-events.html',
+      //   controller: 'VenueEventsCtrl as ctrl'
+      // })
+      // .state('VenueArticles', {
+      //   url: '/venue-articles',
+      //   templateUrl: 'main/templates/venue-articles.html',
+      //   controller: 'VenueArticlesCtrl as ctrl'
+      // })
       .state('articleDetails', {
         url: '/article-details',
         templateUrl: 'main/templates/article-details.html',

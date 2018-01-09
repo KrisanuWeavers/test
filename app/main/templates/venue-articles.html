@@ -1,66 +1,42 @@
-<ion-view hide-nav-bar="true" view-title="Venue Articles" class="signup">
+<ion-view view-title="Venue Profile" class="signup top-tab">
 
-  <div class="bar bar-header bar-assertive">
+  <!-- <div class="bar bar-header bar-positive" id="ben-header">
+    <button class="button back-button buttons button-clear" ng-click="ctrl.goBack()">
+      <i class="icon ion-ios-arrow-back"></i>
+      <span>Backk</span>
+    </button>
+    <div class="title">Venue Profile</div>
     <div class="top-header">
-      <span>manhattan, new york</span>
       <ul>
-        <li class="active"><img src="main/assets/images/ic_calendar.png" alt="" /><strong>08</strong><img class="a-img" src="main/assets/images/ic_calendar_active.png" alt="" /></li>
-        <li class="active"><img src="main/assets/images/ic_map_unactive.png" alt="" /><img class="a-img" src="main/assets/images/ic_map_active.png" alt="" /></li>
-        <li><img src="main/assets/images/ic_search.png" alt="" /></li>
+        <li>
+          <img src="main/assets/images/ic_share.png" alt="" style="width:1.8em;" />
+        </li>
+        <li>
+          <img src="main/assets/images/ic_favorite_heart.png" alt="" />
+        </li>
       </ul>
     </div>
-  </div>
-
-  <div class="bar bar-subheader">
-    <ul class="date-list">
-      <li class="selected">
-        <span>mon</span>
-        <strong>01</strong>
-      </li>
-      <li>
-        <span>tue</span>
-        <strong>02</strong>
-      </li>
-      <li>
-        <span>wed</span>
-        <strong>03</strong>
-      </li>
-      <li>
-        <span>thu</span>
-        <strong>04</strong>
-      </li>
-      <li>
-        <span>fri</span>
-        <strong>05</strong>
-      </li>
-      <li>
-        <span>sat</span>
-        <strong>06</strong>
-      </li>
-      <li>
-        <span>sun</span>
-        <strong>07</strong> 
-      </li>
+  </div> -->
+  <!-- <div class="bar bar-subheader">
+    <ul class="tab-wrap">
+      <li ui-sref="venueInfo">info</li>
+      <li ui-sref="VenueEvents">events</li>
+      <li ui-sref="VenueArticles" class="active">articles</li>
     </ul>
-
-  </div>
-
-
-
-
+  </div> -->
 
   <!-- do you want padding? -->
   <ion-content class="padding has-subheader">
 
     <!-- content goes here -->
     <div class="list">
-        <div class="item">
-            <div class="alerts-box">
-                <img src="main/assets/images/ic_event_party.png" alt="" />
-                <span>This venue has not been mentioned in any article</span>
-            </div>
+      <div class="item">
+        <div class="alerts-box">
+          <img src="main/assets/images/ic_event_party.png" alt="" />
+          <span>This venue has not been mentioned in any article</span>
         </div>
       </div>
+    </div>
 
   </ion-content>
 </ion-view>
