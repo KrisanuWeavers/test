@@ -1,21 +1,15 @@
-<ion-view hide-nav-bar="true" view-title="Articles" class="pro-list">
+<ion-view hide-nav-bar="false" view-title="" class="pro-list">
 
-  <div class="bar bar-header bar-assertive">
-    <div class="top-header">
-      <span>manhattan, new york</span>
-      <ul>
-        <li>
-          <img src="main/assets/images/ic_calendar.png" alt="" />
-        </li>
-        <li>
-          <img src="main/assets/images/ic_map_unactive.png" alt="" />
-        </li>
-        <li>
-          <img src="main/assets/images/ic_search.png" alt="" />
-        </li>
-      </ul>
-    </div>
-  </div>
+
+    <ion-nav-buttons side="left">
+        <span class="city-search">manhattan, new york</span>
+    </ion-nav-buttons>  
+
+    <ion-nav-buttons side="right">
+        <button class="search-top" ng-click="ShowSearch()">search</button>
+      </ion-nav-buttons>
+
+
 
   <div class="bar bar-subheader">
     <div class="myslides">

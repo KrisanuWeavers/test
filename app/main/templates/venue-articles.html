@@ -1,29 +1,17 @@
-<ion-view view-title="Venue Profile" class="signup top-tab">
+<ion-view hide-nav-bar="false" view-title="Venue Profile" class="signup top-tab">
 
-  <!-- <div class="bar bar-header bar-positive" id="ben-header">
-    <button class="button back-button buttons button-clear" ng-click="ctrl.goBack()">
-      <i class="icon ion-ios-arrow-back"></i>
-      <span>Backk</span>
-    </button>
-    <div class="title">Venue Profile</div>
-    <div class="top-header">
-      <ul>
-        <li>
-          <img src="main/assets/images/ic_share.png" alt="" style="width:1.8em;" />
-        </li>
-        <li>
-          <img src="main/assets/images/ic_favorite_heart.png" alt="" />
-        </li>
-      </ul>
-    </div>
-  </div> -->
-  <!-- <div class="bar bar-subheader">
-    <ul class="tab-wrap">
-      <li ui-sref="venueInfo">info</li>
-      <li ui-sref="VenueEvents">events</li>
-      <li ui-sref="VenueArticles" class="active">articles</li>
-    </ul>
-  </div> -->
+  	<ion-nav-buttons side="left">
+        <button ng-click="ctrl.goBack()"><i class="icon ion-ios-arrow-back"></i> <span>Back</span></button>
+      </ion-nav-buttons>
+    
+      <ion-nav-buttons side="right">
+        <button class="share-top">Share</button>
+        <button class="favorite-top">Favorite</button>
+      </ion-nav-buttons>
+    
+      <ion-nav-title>
+        Venue Profile
+      </ion-nav-title>
 
   <!-- do you want padding? -->
   <ion-content class="padding has-subheader">

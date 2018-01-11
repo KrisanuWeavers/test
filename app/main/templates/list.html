@@ -1,26 +1,35 @@
-<ion-view hide-nav-bar="true" view-title="List" class="pro-list">
 
-<!-- Header start -->
-  <div class="bar bar-header bar-assertive">
 
-    <div class="top-header">
-      <span>manhattan, new york</span>
-      <ul>
-        <li>
-          <img src="main/assets/images/ic_calendar.png" alt="" />
-        </li>
-        <li>
-          <img src="main/assets/images/ic_map_unactive.png" alt="" />
-        </li>
-        <li>
-          <img src="main/assets/images/ic_search.png" alt="" />
-        </li>
-      </ul>
-    </div>
+<ion-view hide-nav-bar="false" view-title="" class="pro-list">
 
-  </div>
+  <!-- Header start -->
 
-  <div class="bar bar-subheader">
+  
+  <ion-nav-buttons side="left">
+      <span class="city-search" ng-show="!IsVisibleSerach">manhattan...</span>
+      <div class="search-left" ng-show="IsVisibleSerach">
+          <button ng-show="IsVisibleSerach" ng-click="closeSearch()"><img src="main/assets/images/ic_go_back_arrow.png" alt=""/></button>
+          <input type="search" id="search" placeholder="Ex. Beer" ng-show="IsVisibleSerach"/>
+        </div>
+  </ion-nav-buttons> 
+  
+
+  <ion-nav-buttons side="right">
+    <button class="calender-top" ng-click="ShowHide()"  ng-show="!IsVisible">
+      <strong>{{ctrl.today}}</strong>
+    </button>
+    <button class="calender-top activated" ng-click="ShowHide()" ng-if="IsVisible">
+        <strong>{{ctrl.today}}</strong>
+      </button>
+    <button class="map-top">map</button>
+    <button class="search-top" ng-click="ShowSearch()" ng-show="!IsVisibleSerach">search</button>
+  </ion-nav-buttons>
+
+  <!-- <ion-nav-title ng-show="!IsVisibleSerach">
+    List
+  </ion-nav-title> -->
+
+  <div class="bar bar-subheader" ng-if="!IsVisible">
     <div class="myslides">
       <ks-swiper-container loop="false" show-nav-buttons="false" slides-per-view="3" space-between="5" pagination-clickable="true">
         <ks-swiper-slide>
@@ -47,53 +56,23 @@
     </div>
 
   </div>
-
-  <!-- <div class="bar bar-header bar-assertive">
-    <div class="top-header">
-      <span>manhattan, new york</span>
-      <ul>
-        <li class="active"><img src="main/assets/images/ic_calendar.png" alt="" /><strong>08</strong><img class="a-img" src="main/assets/images/ic_calendar_active.png" alt="" /></li>
-        <li class="active"><img src="main/assets/images/ic_map_unactive.png" alt="" /><img class="a-img" src="main/assets/images/ic_map_active.png" alt="" /></li>
-        <li><img src="main/assets/images/ic_search.png" alt="" /></li>
-      </ul>
-    </div>
-  </div> -->
-
-  <!-- <div class="bar bar-subheader">
+  
+ <div class="bar bar-subheader" ng-if="IsVisible">
     <ul class="date-list">
-      <li class="selected">
-        <span>mon</span>
-        <strong>01</strong>
-      </li>
-      <li>
-        <span>tue</span>
-        <strong>02</strong>
-      </li>
-      <li>
-        <span>wed</span>
-        <strong>03</strong>
-      </li>
-      <li>
-        <span>thu</span>
-        <strong>04</strong>
-      </li>
-      <li>
-        <span>fri</span>
-        <strong>05</strong>
-      </li>
-      <li>
-        <span>sat</span>
-        <strong>06</strong>
-      </li>
-      <li>
-        <span>sun</span>
-        <strong>07</strong> 
+      <li ng-class="{selected: $index===ctrl.index}" ng-repeat="dates in ctrl.aryDates track by $index" ng-click="ctrl.calDateSelect($index,dates.day)">
+        <span>{{dates.dayName}}</span>
+        <strong>{{dates.day}}</strong>
       </li>
     </ul>
-  </div> -->
-<!-- Header end -->
-  <ion-content class="has-subheader">
+  </div>
+  <!-- Header end -->
+  
+  <ion-content class="has-subheader" ng-click="hideKeyBoard()">
+
     <!-- content goes here -->
+    <div class="bgbackdrop" ng-if="IsVisibleSerach">
+        <h3>{{searchTxt}}</h3>
+    </div> 
     <div class="list">
       <div class="item item-avatar" ui-sref="eventDetails">
         <img src="main/assets/images/ic_default_user_photo.png" alt="" />
@@ -104,7 +83,7 @@
           <span>1</span>
         </a>
       </div>
-      <div class="item item-avatar">
+      <div class="item item-avatar" ui-sref="eventDetails">
         <img src="main/assets/images/ic_default_user_photo.png" alt="" />
         <h2>prohibition</h2>
         <p>Back off, man. I'm a scientist. Back off, man. man. I'm a scientist. Back off, man. I'm a.</p>
@@ -113,7 +92,7 @@
           <span>1</span>
         </a>
       </div>
-      <div class="item item-avatar">
+      <div class="item item-avatar" ui-sref="eventDetails">
         <img src="main/assets/images/ic_default_user_photo.png" alt="" />
         <h2>prohibition</h2>
         <p>Back off, man. I'm a scientist. Back off, man. man. I'm a scientist. Back off, man. I'm a.</p>
@@ -122,7 +101,7 @@
           <span>1</span>
         </a>
       </div>
-      <div class="item item-avatar">
+      <div class="item item-avatar" ui-sref="eventDetails">
         <img src="main/assets/images/ic_default_user_photo.png" alt="" />
         <h2>prohibition</h2>
         <p>Back off, man. I'm a scientist. Back off, man. man. I'm a scientist. Back off, man. I'm a.</p>
@@ -131,7 +110,7 @@
           <span>1</span>
         </a>
       </div>
-      <div class="item item-avatar">
+      <div class="item item-avatar" ui-sref="eventDetails">
         <img src="main/assets/images/ic_default_user_photo.png" alt="" />
         <h2>prohibition</h2>
         <p>Back off, man. I'm a scientist. Back off, man. man. I'm a scientist. Back off, man. I'm a.</p>
@@ -140,7 +119,7 @@
           <span>1</span>
         </a>
       </div>
-      <div class="item item-avatar">
+      <div class="item item-avatar" ui-sref="eventDetails">
         <img src="main/assets/images/ic_default_user_photo.png" alt="" />
         <h2>prohibition</h2>
         <p>Back off, man. I'm a scientist. Back off, man. man. I'm a scientist. Back off, man. I'm a.</p>
@@ -149,7 +128,7 @@
           <span>1</span>
         </a>
       </div>
-      <div class="item item-avatar">
+      <div class="item item-avatar" ui-sref="eventDetails">
         <img src="main/assets/images/ic_default_user_photo.png" alt="" />
         <h2>prohibition</h2>
         <p>Back off, man. I'm a scientist. Back off, man. man. I'm a scientist. Back off, man. I'm a.</p>
@@ -158,7 +137,7 @@
           <span>1</span>
         </a>
       </div>
-      <div class="item item-avatar">
+      <div class="item item-avatar" ui-sref="eventDetails">
         <img src="main/assets/images/ic_default_user_photo.png" alt="" />
         <h2>prohibition</h2>
         <p>Back off, man. I'm a scientist. Back off, man. man. I'm a scientist. Back off, man. I'm a.</p>
@@ -167,7 +146,7 @@
           <span>1</span>
         </a>
       </div>
-      <div class="item item-avatar">
+      <div class="item item-avatar" ui-sref="eventDetails">
         <img src="main/assets/images/ic_default_user_photo.png" alt="" />
         <h2>prohibition</h2>
         <p>Back off, man. I'm a scientist. Back off, man. man. I'm a scientist. Back off, man. I'm a.</p>
@@ -176,7 +155,7 @@
           <span>1</span>
         </a>
       </div>
-      <div class="item item-avatar">
+      <div class="item item-avatar" ui-sref="eventDetails">
         <img src="main/assets/images/ic_default_user_photo.png" alt="" />
         <h2>prohibition</h2>
         <p>Back off, man. I'm a scientist. Back off, man. man. I'm a scientist. Back off, man. I'm a.</p>

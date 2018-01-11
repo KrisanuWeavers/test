@@ -29,4 +29,5 @@ angular.module('main')
     ctrl.goBack = function () {
       $state.go('main.list');
     };
+
   });
