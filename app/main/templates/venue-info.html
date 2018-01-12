@@ -1,13 +1,14 @@
-<ion-view hide-nav-bar="false" view-title="Venue Profile" class="signup tabs-top event-details venue-wrap">
+<ion-view hide-nav-bar="false" view-title="Venue Profile" class="signup tabs-top event-details venue-wrap" hide-back-button="true">
 
 	<ion-nav-buttons side="left">
 		<button ng-click="ctrl.goBack()"><i class="icon ion-ios-arrow-back"></i> <span>Back</span></button>
 	</ion-nav-buttons>
 
 	<ion-nav-buttons side="right">
-		<button class="share-top">Share</button>
-		<button class="favorite-top">Favorite</button>
-	</ion-nav-buttons>
+    <button class="share-top">Share</button>
+    <button class="favorite-top" ng-show="!ctrl.isFavoriteActive" ng-click="ctrl.activeFavorite()">Favorite</button>
+    <button class="favorite-top activated" ng-if="ctrl.isFavoriteActive" ng-click="ctrl.activeFavorite()">Favorite</button>
+  </ion-nav-buttons>
 
 	<ion-nav-title>
 		Venue Profile

@@ -1,18 +1,19 @@
 <ion-view hide-nav-bar="false" view-title="Event Details" class="event-details">
 
-  <ion-nav-buttons side="left">
+  <ion-nav-buttons side="left" id="ben-header">
     <button ng-click="ctrl.goBack()">
       <i class="icon ion-ios-arrow-back"></i>
       <span>Back</span>
     </button>
   </ion-nav-buttons>
 
-  <ion-nav-buttons side="right">
+  <ion-nav-buttons side="right" id="ben-header">
     <button class="share-top">Share</button>
-    <button class="favorite-top">Favorite</button>
+    <button class="favorite-top" ng-show="!ctrl.isFavoriteActive" ng-click="ctrl.activeFavorite()">Favorite</button>
+    <button class="favorite-top activated" ng-if="ctrl.isFavoriteActive" ng-click="ctrl.activeFavorite()">Favorite</button>
   </ion-nav-buttons>
 
-  <ion-nav-title>
+  <ion-nav-title id="ben-header">
     Event Details
   </ion-nav-title>
   <!-- do you want padding? -->
@@ -23,11 +24,18 @@
       <ion-item>
         <div class="event-banner">
           <img src="main/assets/images/ic_request_birthday_banner.jpg" alt="" />
-          <span>
+          <span ng-click="ctrl.openModal($event)">
             <img src="main/assets/images/ic_expand.png" alt="" />
           </span>
         </div>
       </ion-item>
+      <!-- <div ng-show="ctrl.isTopImagVisible">
+          <ion-item>
+              <div class="event-banner">
+                <img src="main/assets/images/ic_request_birthday_banner.jpg" alt="" />
+              </div>
+            </ion-item>
+      </div> -->
       <ion-item>
         <div class="events-info">
           <h2>Half off all signature cocktails</h2>

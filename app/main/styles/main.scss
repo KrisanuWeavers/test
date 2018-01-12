@@ -852,12 +852,12 @@ body {
     .favorite-top {
         background: url(../assets/images/ic_favorite_heart.png) no-repeat center center;
         border: none;
-        background-size: 34px auto;
+        background-size: 30px auto;
         text-indent: -9999px;
-        width: 34px;
+        width: 30px;
         padding: 0;
         min-height: 30px;
-        margin-left: 10px;
+        margin-left: 12px;
     }
     .favorite-top.activated {
         background-image: url(../assets/images/ic_favorite_heart_selected.png);
@@ -865,8 +865,8 @@ body {
     .calender-top {
         background: url(../assets/images/ic_calendar.png) no-repeat center center;
         border: none;
-        background-size: 34px auto;
-        width: 34px;
+        background-size: 30px auto;
+        width: 30px;
         padding: 0;
         min-height: 30px;
         color: #fff;
@@ -883,12 +883,12 @@ body {
     .map-top {
         background: url(../assets/images/ic_map_unactive.png) no-repeat center center;
         border: none;
-        background-size: 34px auto;
+        background-size: 30px auto;
         text-indent: -9999px;
-        width: 34px;
+        width: 30px;
         padding: 0;
         min-height: 30px;
-        margin-left: 5px;
+        margin-left: 12px;
     }
     .map-top.activated {
         background-image: url(../assets/images/ic_map_active.png);
@@ -896,12 +896,12 @@ body {
     .search-top {
         background: url(../assets/images/ic_search.png) no-repeat center center;
         border: none;
-        background-size: 34px auto;
+        background-size: 30px auto;
         text-indent: -9999px;
-        width: 34px;
+        width: 30px;
         padding: 0;
         min-height: 30px;
-        margin-left: 5px;
+        margin-left: 12px;
     }
 }
 .event-details {
@@ -1427,5 +1427,21 @@ body {
   .keyboard-open .has-tabs{
    bottom:0;
    }
-   
-   
+  #map-div {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 9;
+}
+button.done-right {
+    position: absolute;
+    border: 2px solid #fff;
+    background: none;
+    color: #fff;
+    padding: 5px 20px;
+    border-radius: 20px;
+    right: 10px;
+    top: 10px;
+}

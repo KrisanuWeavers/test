@@ -7,4 +7,11 @@ angular.module('main')
     ctrl.goBack = function () {
       $state.go('eventDetails');
     };
+    ctrl.isFavoriteActive = false;
+    ctrl.activeFavorite = function () {
+      ctrl.isFavoriteActive = ctrl.isFavoriteActive ? false : true;
+    };
+    ctrl.goBack = function () {
+      $state.go('eventDetails');
+    };
   });
