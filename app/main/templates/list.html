@@ -21,7 +21,8 @@
     <button class="calender-top activated" ng-click="ShowHide()" ng-if="IsVisible">
         <strong>{{ctrl.today}}</strong>
       </button>
-    <button class="map-top">map</button>
+    <button class="map-top" ng-click="showMap()" ng-show="!IsMapVisible">map</button>
+    <button class="map-top activated" ng-click="showMap()" ng-if="IsMapVisible">map</button>
     <button class="search-top" ng-click="ShowSearch()" ng-show="!IsVisibleSerach">search</button>
   </ion-nav-buttons>
 
@@ -69,6 +70,8 @@
   
   <ion-content class="has-subheader" ng-click="hideKeyBoard()">
 
+    <div id="map-div" style="height:100vh;width:100vh" ng-show="IsMapVisible">
+    </div>
     <!-- content goes here -->
     <div class="bgbackdrop" ng-if="IsVisibleSerach">
         <h3>{{searchTxt}}</h3>
