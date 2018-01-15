@@ -12,6 +12,11 @@ angular.module('main', [
     $urlRouterProvider.otherwise('/signin');
     $stateProvider
       // this state is placed in the <ion-nav-view> in the index.html
+      .state('splash', {
+        url: '/splash',
+        templateUrl: 'main/templates/splash.html',
+        controller: 'SplashCtrl as ctrl'
+      })
       .state('home', {
         url: '/home',
         templateUrl: 'main/templates/signup.html',

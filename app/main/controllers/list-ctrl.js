@@ -1,6 +1,6 @@
 'use strict';
 angular.module('main')
-  .controller('ListCtrl', function ($log, $scope, $rootScope, $filter, $cordovaGeolocation, $state) {
+  .controller('ListCtrl', function ($log, $scope, $rootScope, $filter, $cordovaGeolocation, $state, $ionicScrollDelegate) {
     var ctrl = this;
     $log.log('Hello from your Controller: ListCtrl in module main:. This is your controller:', this);
     /*==================================================
@@ -32,6 +32,7 @@ angular.module('main')
     $scope.ShowSearch = function () {
       //If DIV is visible it will be hidden and vice versa.
       $scope.IsVisibleSerach = $scope.IsVisibleSerach ? false : true;
+      $ionicScrollDelegate.freezeAllScrolls(true);
       $scope.searchTxt = 'Start Typing...';
       if (window.cordova && window.cordova.plugins.Keyboard) {
         window.cordova.plugins.Keyboard.show();
@@ -45,6 +46,7 @@ angular.module('main')
     };
     $scope.closeSearch = function () {
       //If DIV is visible it will be hidden and vice versa.
+      $ionicScrollDelegate.freezeAllScrolls(false);
       $scope.IsVisibleSerach = false;
       if (window.cordova && window.cordova.plugins.Keyboard) {
         window.cordova.plugins.Keyboard.close();
@@ -59,7 +61,14 @@ angular.module('main')
     $scope.IsMapVisible = false;
     $scope.showMap = function () {
       //If DIV is visible it will be hidden and vice versa.
+      $ionicScrollDelegate.freezeAllScrolls(true);
       $scope.IsMapVisible = $scope.IsMapVisible ? false : true;
+      if ($scope.IsMapVisible) {
+        $ionicScrollDelegate.freezeAllScrolls(true);
+      }
+      else {
+        $ionicScrollDelegate.freezeAllScrolls(false);
+      }
       var options = { timeout: 10000, enableHighAccuracy: true };
       $cordovaGeolocation.getCurrentPosition(options).then(function () {
         // eslint-disable-next-line no-undef
