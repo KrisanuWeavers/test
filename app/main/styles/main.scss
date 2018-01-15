@@ -1445,3 +1445,23 @@ button.done-right {
     right: 10px;
     top: 10px;
 }
+.splash-div{
+    background: #0173f8;
+}
+
+@-webkit-keyframes bounce {
+    0% {
+      -webkit-transform: translate3d(0,100%,0);
+    }
+   
+    100% {
+      -webkit-transform: translate3d(0,0,0);
+    }
+  }
+   
+  .bounce-animation {
+    -webkit-animation: bounce ease-in 1;
+    animation: bounce ease-in 1;
+    -webkit-animation-duration: 1050ms;
+    animation-duration: 1050ms;
+  }
