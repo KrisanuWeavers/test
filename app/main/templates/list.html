@@ -1,26 +1,26 @@
-
-
 <ion-view hide-nav-bar="false" view-title="" class="pro-list">
 
   <!-- Header start -->
 
-  
+
   <ion-nav-buttons side="left">
-      <span class="city-search" ng-show="!IsVisibleSerach">manhattan...</span>
-      <div class="search-left" ng-show="IsVisibleSerach">
-          <button ng-show="IsVisibleSerach" ng-click="closeSearch()"><img src="main/assets/images/ic_go_back_arrow.png" alt=""/></button>
-          <input type="search" id="search" placeholder="Ex. Beer" ng-show="IsVisibleSerach"/>
-        </div>
-  </ion-nav-buttons> 
-  
+    <span class="city-search" ng-show="!IsVisibleSerach">manhattan...</span>
+    <div class="search-left" ng-show="IsVisibleSerach">
+      <button ng-show="IsVisibleSerach" ng-click="closeSearch()">
+        <img src="main/assets/images/ic_go_back_arrow.png" alt="" />
+      </button>
+      <input type="search" id="search" placeholder="Ex. Beer" ng-show="IsVisibleSerach" />
+    </div>
+  </ion-nav-buttons>
+
 
   <ion-nav-buttons side="right">
-    <button class="calender-top" ng-click="ShowHide()"  ng-show="!IsVisible">
+    <button class="calender-top" ng-click="ShowHide()" ng-show="!IsVisible">
       <strong>{{ctrl.today}}</strong>
     </button>
     <button class="calender-top activated" ng-click="ShowHide()" ng-if="IsVisible">
-        <strong>{{ctrl.today}}</strong>
-      </button>
+      <strong>{{ctrl.today}}</strong>
+    </button>
     <button class="map-top" ng-click="showMap()" ng-show="!IsMapVisible">map</button>
     <button class="map-top activated" ng-click="showMap()" ng-if="IsMapVisible">map</button>
     <button class="search-top" ng-click="ShowSearch()" ng-show="!IsVisibleSerach">search</button>
@@ -57,8 +57,8 @@
     </div>
 
   </div>
-  
- <div class="bar bar-subheader" ng-if="IsVisible">
+
+  <div class="bar bar-subheader" ng-if="IsVisible">
     <ul class="date-list">
       <li ng-class="{selected: $index===ctrl.index}" ng-repeat="dates in ctrl.aryDates track by $index" ng-click="ctrl.calDateSelect($index,dates.day)">
         <span>{{dates.dayName}}</span>
@@ -67,15 +67,14 @@
     </ul>
   </div>
   <!-- Header end -->
-  
-  <ion-content class="has-subheader" ng-click="hideKeyBoard()">
-
+ 
+  <ion-content class="has-subheader" ng-click="hideKeyBoard()" overflow-scroll="false" scrollbar-x="true">
     <div id="map-div" ng-show="IsMapVisible">
-    </div>
+      </div>
     <!-- content goes here -->
     <div class="bgbackdrop" ng-if="IsVisibleSerach">
-        <h3>{{searchTxt}}</h3>
-    </div> 
+      <h3>{{searchTxt}}</h3>
+    </div>
     <div class="list">
       <div class="item item-avatar" ui-sref="eventDetails">
         <img src="main/assets/images/ic_default_user_photo.png" alt="" />
