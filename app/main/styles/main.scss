@@ -1404,8 +1404,8 @@ body {
     h3 {
         position: absolute;
         left: 40%;
-        top: 50%;        
-        transform: translate(-50%,-50%);
+        top: 15%;        
+        transform: translate(-15%,-15%);
         margin: 0;
         font-size: 18px;
     }
@@ -1445,6 +1445,7 @@ button.done-right {
     right: 10px;
     top: 10px;
 }
+
 .splash-div{
     background: #0173f8;
 }
@@ -1465,3 +1466,5 @@ button.done-right {
     -webkit-animation-duration: 1050ms;
     animation-duration: 1050ms;
   }
+  
+  

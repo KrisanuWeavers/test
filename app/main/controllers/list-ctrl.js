@@ -39,6 +39,7 @@ angular.module('main')
         window.cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
         window.cordova.plugins.Keyboard.disableScroll(true);
       }
+      $ionicScrollDelegate.scrollTop();
     };
     ctrl.showSearchBack = function () {
       //If DIV is visible it will be hidden and vice versa.
@@ -94,6 +95,9 @@ angular.module('main')
         $log.log(error);
       });
     };
+    $scope.$on('$ionicView.leave', function () {
+      $scope.IsMapVisible = false;
+    });
     /*************************************
     * END OF MAP
     **************************************/
