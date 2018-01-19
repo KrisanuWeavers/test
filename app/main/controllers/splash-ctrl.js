@@ -5,5 +5,5 @@ angular.module('main')
     $log.log('Hello from your Controller: SplashCtrl in module main:. This is your controller:', this);
     $timeout(function () {
       $state.go('signin');
-    }, 1000);
+    }, 1080);
   });
