@@ -1,13 +1,13 @@
 <ion-view hide-nav-bar="false" view-title="" class="pro-list">
 
 
-    <ion-nav-buttons side="left">
-        <span class="city-search">manhattan, new york</span>
-    </ion-nav-buttons>  
+  <ion-nav-buttons side="left">
+    <span class="city-search">manhattan, new york</span>
+  </ion-nav-buttons>
 
-    <ion-nav-buttons side="right">
-        <button class="search-top" ng-click="ShowSearch()">search</button>
-      </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+    <button class="search-top" ng-click="ShowSearch()">search</button>
+  </ion-nav-buttons>
 
 
 
@@ -48,107 +48,25 @@
     <!-- content goes here -->
     <!-- content goes here -->
     <div class="list">
-      <div class="pro-banner">
-        <h2>For Sasha
-          <span>16 Feb 2017</span>
+      <div class="pro-banner" ng-if="$index == 0" ng-repeat="articles in ctrl.response track by $index">
+        <h2>{{articles.title}}
+          <span>{{articles.created_on | date : "dd MMM y" }}</span>
         </h2>
-        <strong>Donald Tusk</strong>
+        <strong>{{articles.author.name}}</strong>
         <a>
-          <img src="main/assets/images/ic_favorite_heart_selected.png" alt="" />
-          <span>12 likes</span>
+          <img ng-src="main/assets/images/ic_favorite_heart_selected.png" alt="" />
+          <span>{{articles.likes_count}} likes</span>
         </a>
       </div>
-      <div class="item item-thumbnail-left" ui-sref="articleDetails">
-        <img src="main/assets/images/ic_intro_great_times.png" alt="" />
-        <h3>The Best New York City Bars for Singles</h3>
-        <h4>BY: Jerry R</h4>
-        <a>
-          <i class="ion-android-favorite"></i>
-          <span>1</span>
-        </a>
-      </div>
-      <div class="item item-thumbnail-left" ui-sref="articleDetails">
-        <img src="main/assets/images/ic_intro_great_times.png" alt="" />
-        <h3>The Best New York City Bars for Singles</h3>
-        <h4>BY: Jerry R</h4>
+      <div class="item item-thumbnail-left" ng-if="$index >= 1" ng-repeat="articles in ctrl.response track by $index" ng-click="ctrl.getArticleDetails(articles._id)">
+        <img ng-src="{{articles.image}}" alt="" />
+        <h3>{{articles.title}}</h3>
+        <h4>BY: {{articles.author.name}}</h4>
         <a>
           <i class="ion-android-favorite"></i>
-          <span>1</span>
+          <span>{{articles.likes_count}}</span>
         </a>
       </div>
-      <div class="item item-thumbnail-left" ui-sref="articleDetails">
-        <img src="main/assets/images/ic_intro_great_times.png" alt="" />
-        <h3>The Best New York City Bars for Singles</h3>
-        <h4>BY: Jerry R</h4>
-        <a>
-          <i class="ion-android-favorite"></i>
-          <span>1</span>
-        </a>
-      </div>
-      <div class="item item-thumbnail-left" ui-sref="articleDetails">
-        <img src="main/assets/images/ic_intro_great_times.png" alt="" />
-        <h3>The Best New York City Bars for Singles</h3>
-        <h4>BY: Jerry R</h4>
-        <a>
-          <i class="ion-android-favorite"></i>
-          <span>1</span>
-        </a>
-      </div>
-      <div class="item item-thumbnail-left" ui-sref="articleDetails">
-        <img src="main/assets/images/ic_intro_great_times.png" alt="" />
-        <h3>The Best New York City Bars for Singles</h3>
-        <h4>BY: Jerry R</h4>
-        <a>
-          <i class="ion-android-favorite"></i>
-          <span>1</span>
-        </a>
-      </div>
-      <div class="item item-thumbnail-left" ui-sref="articleDetails">
-        <img src="main/assets/images/ic_intro_great_times.png" alt="" />
-        <h3>The Best New York City Bars for Singles</h3>
-        <h4>BY: Jerry R</h4>
-        <a>
-          <i class="ion-android-favorite"></i>
-          <span>1</span>
-        </a>
-      </div>
-      <div class="item item-thumbnail-left" ui-sref="articleDetails">
-        <img src="main/assets/images/ic_intro_great_times.png" alt="" />
-        <h3>The Best New York City Bars for Singles</h3>
-        <h4>BY: Jerry R</h4>
-        <a>
-          <i class="ion-android-favorite"></i>
-          <span>1</span>
-        </a>
-      </div>
-      <div class="item item-thumbnail-left" ui-sref="articleDetails">
-        <img src="main/assets/images/ic_intro_great_times.png" alt="" />
-        <h3>The Best New York City Bars for Singles</h3>
-        <h4>BY: Jerry R</h4>
-        <a>
-          <i class="ion-android-favorite"></i>
-          <span>1</span>
-        </a>
-      </div>
-      <div class="item item-thumbnail-left" ui-sref="articleDetails">
-        <img src="main/assets/images/ic_intro_great_times.png" alt="" />
-        <h3>The Best New York City Bars for Singles</h3>
-        <h4>BY: Jerry R</h4>
-        <a>
-          <i class="ion-android-favorite"></i>
-          <span>1</span>
-        </a>
-      </div>
-      <div class="item item-thumbnail-left" ui-sref="articleDetails">
-        <img src="main/assets/images/ic_intro_great_times.png" alt="" />
-        <h3>The Best New York City Bars for Singles</h3>
-        <h4>BY: Jerry R</h4>
-        <a>
-          <i class="ion-android-favorite"></i>
-          <span>1</span>
-        </a>
-      </div>
-
     </div>
 
 

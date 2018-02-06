@@ -1,61 +1,105 @@
 <ion-view view-title="Sign Up" class="signup">
-  <!-- do you want padding? -->
-  <ion-content class="no-padding">
-
-    <!-- content goes here -->
-    <div class="list">
-      <div class="item">
-        <div class="photo-box">
-          <div class="change-photo">
-            <span><img src="main/assets/images/ic_koala_glasses.jpg" alt="" /></span>
-            <a><img src="main/assets/images/ic_saved.png" alt="" /></a>
+  <form name="signUpForm" novalidate>
+    <!-- do you want padding? -->
+    <ion-content class="no-padding">
+      <!-- content goes here -->
+      <div class="list">
+        <div class="item">
+          <div class="photo-box">
+            <div class="change-photo">
+              <span>
+                <img src="main/assets/images/ic_koala_glasses.jpg" alt="" />
+              </span>
+              <a>
+                <img src="main/assets/images/ic_saved.png" alt="" />
+              </a>
+            </div>
+            <p>Change Your Photo</p>
           </div>
-          <p>Change Your Photo</p>
+        </div>
+        <div class="item">
+          <div class="user-form">
+            <div class="row">
+              <div class="col col-50">
+                <label>First Name</label>
+                <input type="text" name="fname" ng-model="ctrl.fname" required/>
+              </div>
+              <div class="col col-50">
+                <label>Last Name</label>
+                <input type="text" name="lname" ng-model="ctrl.lname" required/>
+              </div>
+
+            </div>
+            <div class="row">
+              <div class="col">
+                <span style="color:red" ng-show="signUpForm.fname.$dirty && signUpForm.fname.$invalid">
+                  <span ng-show="signUpForm.fname.$error.required">First Name is required.</span>
+                </span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <span style="color:red" ng-show="signUpForm.lname.$dirty && signUpForm.lname.$invalid">
+                  <span ng-show="signUpForm.lname.$error.required">Last Name is required.</span>
+                </span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <label>Email</label>
+                <input type="email" name="email" ng-model="ctrl.email" required/>
+                <span style="color:red" ng-show="signUpForm.email.$dirty && signUpForm.email.$invalid">
+                  <span ng-show="signUpForm.email.$error.required">Email is required.</span>
+                  <span ng-show="signUpForm.email.$error.email">Invalid email address.</span>
+                </span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <label>User Name</label>
+                <input type="text" name="uname" ng-model="ctrl.uname" ng-minlength="3" required/>
+                <span style="color:red" ng-show="signUpForm.uname.$dirty && signUpForm.uname.$invalid">
+                  <span ng-show="signUpForm.uname.$error.required">User Name is required.</span>
+                  <span style="color:red" ng-show="signUpForm.uname.$error.minlength">
+                      User Name should contain atleast 3 characters</span>
+                </span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <label>Password</label>
+                <input type="password" name="password" ng-model="ctrl.password" ng-minlength="6" required/>
+                <span style="color:red" ng-show="signUpForm.password.$dirty && signUpForm.password.$invalid">
+                  <span ng-show="signUpForm.password.$error.required">Password is required.</span>
+                  <span style="color:red" ng-show="signUpForm.password.$error.minlength">
+                    Password should contain atleast 6 characters</span>
+                </span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <input type="checkbox" id="checkbox-3" class="checkbox-custom" name="agreeCheck" ng-model="ctrl.agreeCheck" required>
+                <label for="checkbox-3" class="checkbox-custom-label">I agree to the
+                  <strong>Terms & Conditions</strong>
+                </label>
+                <div class="row">
+                  <div class="col">
+                    <span style="color:red" ng-show="signUpForm.agreeCheck.$dirty && signUpForm.agreeCheck.$invalid">
+                      <span ng-show="signUpForm.agreeCheck.$error.required">Please agree with Terms & Conditions.</span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="item">
-        <div class="user-form">
-        <div class="row">
-          <div class="col col-50">
-            <label>First Name</label>
-            <input type="text" name="first name" value="" />
-          </div>
-          <div class="col col-50">
-            <label>Last Name</label>
-            <input type="text" name="last name" value="" />
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            <label>Email</label>
-            <input type="email" name="email" value="" />
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            <label>User Name</label>
-            <input type="text" name="user name" value="" />
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            <label>Password</label>
-            <input type="password" name="password" value="" />
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
-              <input id="checkbox-3" class="checkbox-custom" name="checkbox-3" type="checkbox">
-              <label for="checkbox-3"class="checkbox-custom-label">I agree to the <strong>Terms & Conditions</strong></label>
-          </div>
-        </div>
-        </div>
+    </ion-content>
+    <ion-footer-bar class="hide-on-keyboard-open">
+      <div class="profile-bottom">
+        <p>Your profile is important</p>
+        <button ng-click="ctrl.signUp()" class="profileButton" ng-disabled="signUpForm.$invalid">Next</button>
       </div>
-    </div>
-
-  </ion-content>
-  <div class="profile-bottom">
-    <p>Your profile is important</p>
-    <a ui-sref="signup-com">Next</a>
-  </div>
+    </ion-footer-bar>
+  </form>
 </ion-view>
