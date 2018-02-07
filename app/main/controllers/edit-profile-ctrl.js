@@ -1,12 +1,20 @@
 'use strict';
 angular.module('main')
-  .controller('EditProfileCtrl', function ($scope, $log, ionicDatePicker, Store, $localStorage, $ionicPopup) {
+  .controller('EditProfileCtrl', function ($scope, $log, ionicDatePicker, Store, $localStorage, $ionicPopup, $ionicLoading) {
     var ctrl = this;
     $log.log('Hello from your Controller: EditProfileCtrl in module main:. This is your controller:', this);
+    $ionicLoading.show({
+      content: 'Loading',
+      animation: 'fade-in',
+      showBackdrop: true,
+      maxWidth: 200,
+      showDelay: 0
+    });
     $scope.$on('$ionicView.afterEnter', function () {
       Store.getProfile($localStorage.savedUser.token, $localStorage.savedUser.userId)
         .then(function (response) {
           if (response.data.status === 200) {
+            $ionicLoading.hide();
             $log.log('======User Profile Data=======');
             $log.log(response);
             if (response.data.user.picture === null) {
@@ -40,6 +48,7 @@ angular.module('main')
         }).catch(function (error) {
           //ctrl.isAnyLatest = false;
           $log.log(error);
+          $ionicLoading.hide();
         });
     });
     var ipObj1 = {
@@ -64,6 +73,13 @@ angular.module('main')
       ionicDatePicker.openDatePicker(ipObj1);
     };
     ctrl.saveProfile = function () {
+      $ionicLoading.show({
+        content: 'Loading',
+        animation: 'fade-in',
+        showBackdrop: true,
+        maxWidth: 200,
+        showDelay: 0
+      });
       var date = new Date(ctrl.dob);
       var d = date.getDate();
       var m = date.getMonth() + 1;
@@ -85,6 +101,7 @@ angular.module('main')
       $log.log($localStorage.savedUser.token);
       Store.userEditProfile(ctrl.fname, ctrl.lname, ctrl.email, ctrl.bday, ctrl.gender, ctrl.webSite, ctrl.bio, $localStorage.savedUser.token)
         .then(function () {
+          $ionicLoading.hide();
           $ionicPopup.show({
             title: 'Message',
             subTitle: 'your profile has been updated successfully.',
@@ -97,6 +114,7 @@ angular.module('main')
           });
         }).catch(function (error) {
           //ctrl.isAnyLatest = false;
+          $ionicLoading.hide();
           $log.log(error);
         });
     };

@@ -126,5 +126,17 @@ angular.module('main')
           }
         });
       },
+      userForgotPassword: function (email) {
+        var param = {
+          'device_id': '1237894563',
+          'email': email
+        };
+        return $http.post(Config.ENV.SERVER_URL + 'user/forgot-password', param, {
+          transformResponse: function (response) {
+            var dataParse = JSON.parse(response);
+            return dataParse;
+          }
+        });
+      }
     };
   });
