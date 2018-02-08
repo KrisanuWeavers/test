@@ -65,6 +65,48 @@ angular.module('main')
           return dataParse;
         });
       },
+      getArticlesDetails: function (jwtToken, articleId) {
+        var token = Config.ENV.AUTH_APPEND + jwtToken;
+        return $http.get(Config.ENV.SERVER_URL + 'article/' + articleId, {
+          headers: {
+            'Authorization': token
+          }
+        }).then(function (response) {
+          var data = JSON.stringify(response);
+          var dataParse = JSON.parse(data);
+          return dataParse;
+        });
+      },
+      setLikeArticle: function (jwtToken, articleId, userId) {
+        var token = Config.ENV.AUTH_APPEND + jwtToken;
+        var param = {
+          'id': userId,
+        };
+        return $http.post(Config.ENV.SERVER_URL + 'article/like/' + articleId, param, {
+          headers: {
+            'Authorization': token
+          }
+        }).then(function (response) {
+          var data = JSON.stringify(response);
+          var dataParse = JSON.parse(data);
+          return dataParse;
+        });
+      },
+      setLikeVenue: function (jwtToken, venueId, userId) {
+        var token = Config.ENV.AUTH_APPEND + jwtToken;
+        var param = {
+          'id': userId,
+        };
+        return $http.post(Config.ENV.SERVER_URL + 'venue/like/' + venueId, param, {
+          headers: {
+            'Authorization': token
+          }
+        }).then(function (response) {
+          var data = JSON.stringify(response);
+          var dataParse = JSON.parse(data);
+          return dataParse;
+        });
+      },
       getProfile: function (jwtToken, id) {
         var token = Config.ENV.AUTH_APPEND + jwtToken;
         return $http.get(Config.ENV.SERVER_URL + 'user/profile/' + id, {

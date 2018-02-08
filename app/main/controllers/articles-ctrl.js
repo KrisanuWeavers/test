@@ -20,6 +20,7 @@ angular.module('main')
           ctrl.response = response.data.articles;
         }).catch(function (error) {
           //ctrl.isAnyLatest = false;
+          $ionicLoading.hide();
           $log.log(error);
         });
     });

@@ -19,7 +19,7 @@ angular.module('main')
       'favorites': null
     };
     $scope.$on('$ionicView.afterEnter', function () {
-      if (window.localStorage.getItem('userName') !== null) {
+      if (window.localStorage.getItem('token') !== null) {
         $state.go('main.list');
       }
     });
@@ -37,6 +37,7 @@ angular.module('main')
           if (response.data.status === 200) {
             window.localStorage.setItem('userName', ctrl.uname);
             window.localStorage.setItem('userPass', ctrl.upass);
+            window.localStorage.setItem('token', response.data.jwt.token);
             $ionicLoading.hide();
             $log.log('======SignIn Data=======');
             $log.log(response);

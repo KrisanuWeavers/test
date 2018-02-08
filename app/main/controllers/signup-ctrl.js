@@ -1,9 +1,16 @@
 'use strict';
 angular.module('main')
-  .controller('SignupCtrl', function ($log, $state, $scope, getSignUpData, Store, $ionicPopup) {
+  .controller('SignupCtrl', function ($log, $state, $scope, getSignUpData, Store, $ionicPopup, $ionicLoading) {
     var ctrl = this;
     $log.log('Hello from your Controller: SignupCtrl in module main:. This is your controller:', this);
     ctrl.signUp = function () {
+      $ionicLoading.show({
+        content: 'Loading',
+        animation: 'fade-in',
+        showBackdrop: true,
+        maxWidth: 200,
+        showDelay: 0
+      });
       //$scope.signUpArr['device_id'] = $cordovaDevice.getUUID();
       $scope.signUpArr['device_id'] = '987456321';
       $scope.signUpArr['first_name'] = ctrl.fname;
@@ -16,6 +23,7 @@ angular.module('main')
         .then(function (response) {
           $log.log('======User Exists=======');
           if (response.data.status) {
+            $ionicLoading.hide();
             $log.log(response.data.emailExists);
             if (response.data.emailExists === 1 || response.data.usernameExists === 1) {
               $ionicPopup.show({
@@ -29,11 +37,12 @@ angular.module('main')
                 ]
               });
             } else {
+              $ionicLoading.hide();
               $state.go('signup-com');
             }
           }
         }).catch(function (error) {
-          //ctrl.isAnyLatest = false;
+          $ionicLoading.hide();
           $log.log(error);
         });
     };
