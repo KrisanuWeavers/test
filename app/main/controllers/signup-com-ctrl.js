@@ -4,6 +4,11 @@ angular.module('main')
 
     $log.log('Hello from your Controller: SignupComCtrl in module main:. This is your controller:', this);
     var ctrl = this;
+    if (window.localStorage.getItem('token') !== null) {
+      ctrl.isVisible = false;
+    } else {
+      ctrl.isVisible = true;
+    }
     ctrl.finalSignUpAr = getSignUpData.getData();
     //$log.log(ctrl.finalSignUpAr);
     ctrl.savedUserLogin = {
@@ -84,4 +89,13 @@ angular.module('main')
    End: Initialize
    ==================================================*/
     ctrl.initialize();
+    ctrl.goBack = function () {
+      if (window.localStorage.getItem('token') !== null) {
+        $state.go('main.setting');
+        ctrl.isVisible = false;
+      } else {
+        $state.go('signup');
+        ctrl.isVisible = true;
+      }
+    };
   });

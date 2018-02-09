@@ -1,6 +1,6 @@
 'use strict';
 angular.module('main')
-  .controller('EditProfileCtrl', function ($scope, $log, ionicDatePicker, Store, $localStorage, $ionicPopup, $ionicLoading) {
+  .controller('EditProfileCtrl', function ($scope, $log, ionicDatePicker, Store, $localStorage, $ionicPopup, $ionicLoading, $state) {
     var ctrl = this;
     $log.log('Hello from your Controller: EditProfileCtrl in module main:. This is your controller:', this);
     $ionicLoading.show({
@@ -118,5 +118,7 @@ angular.module('main')
           $log.log(error);
         });
     };
-
+    ctrl.goBack = function () {
+      $state.go('main.profile');
+    };
   });

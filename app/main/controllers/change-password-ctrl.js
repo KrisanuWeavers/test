@@ -1,6 +1,6 @@
 'use strict';
 angular.module('main')
-  .controller('ChangePasswordCtrl', function ($log, $ionicPopup, Store, $localStorage, $ionicLoading) {
+  .controller('ChangePasswordCtrl', function ($log, $ionicPopup, Store, $localStorage, $ionicLoading, $state) {
     $log.log('Hello from your Controller: ChangePasswordCtrl in module main:. This is your controller:', this);
     var ctrl = this;
     ctrl.changePassword = function () {
@@ -57,5 +57,8 @@ angular.module('main')
             }
           });
       }
+    };
+    ctrl.goBack = function () {
+      $state.go('main.setting');
     };
   });

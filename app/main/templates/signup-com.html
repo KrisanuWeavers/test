@@ -1,30 +1,41 @@
 <ion-view view-title="Favourites" class="signup info-wrap">
+  <ion-nav-buttons side="left">
+    <button ng-click="ctrl.goBack()">
+      <i class="icon ion-ios-arrow-back"></i>
+      <span>Back</span>
+    </button>
+  </ion-nav-buttons>
   <!-- do you want padding? -->
   <ion-content class="padding">
 
     <!-- content goes here -->
     <div class="list">
       <div class="item">
-        <h1>Tap Your<br />Favorites</h1>
+        <h1>Tap Your
+          <br />Favorites</h1>
       </div>
       <div class="item">
-        <h2>Tap whatever moves you,<br />you can always edit later.</h2>
+        <h2>Tap whatever moves you,
+          <br />you can always edit later.</h2>
       </div>
       <div class="item">
-          <div class="info-box">
-            <div class="row">
-              <div class="col col-25" ng-repeat="favourites in ctrl.favourites track by $index" ng-click="ctrl.isFavouritesSelect(favourites)">
-                <span  ng-class="{'selected': favourites.selected}"><img src="main/assets/images/ic_love_face.png" alt="" /></span>
-                <p>hookah</p>
-              </div>
+        <div class="info-box">
+          <div class="row">
+            <div class="col col-25" ng-repeat="favourites in ctrl.favourites track by $index" ng-click="ctrl.isFavouritesSelect(favourites)">
+              <span ng-class="{'selected': favourites.selected}">
+                <img src="main/assets/images/ic_love_face.png" alt="" />
+              </span>
+              <p>hookah</p>
             </div>
           </div>
+        </div>
       </div>
     </div>
 
   </ion-content>
   <div class="profile-bottom">
     <p>must pick at least 3</p>
-    <a ng-click="ctrl.saveFavorites()">finish</a>
+    <a ng-click="ctrl.saveFavorites()" ng-if="ctrl.isVisible">Finish</a>
+    <a ng-if="!ctrl.isVisible">Update</a>
   </div>
 </ion-view>

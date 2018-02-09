@@ -1,40 +1,50 @@
 <ion-view view-title="Profile" class="signup">
+  <ion-nav-buttons side="left">
+    <button ng-click="ctrl.goBack()">
+      <i class="icon ion-ios-arrow-back"></i>
+      <span>Back</span>
+    </button>
+  </ion-nav-buttons>
   <!-- do you want padding? -->
   <ion-content class="no-padding">
 
     <!-- content goes here -->
     <div class="list">
-        <div class="item">
-          <div class="profile-banner">
-            <span><img src="main/assets/images/ic_default_user_photo.png" alt="" /></span>
-            <p>Subhashis R.<strong>@subhashis</strong></p>
-            <div>
-              <a ui-sref="main.setting">settings</a>
-              <a ui-sref="edit-profile">edit</a>
-            </div>
+      <div class="item">
+        <div class="profile-banner">
+          <span>
+            <img src="main/assets/images/ic_default_user_photo.png" alt="" />
+          </span>
+          <p>Subhashis R.
+            <strong>@subhashis</strong>
+          </p>
+          <div>
+            <a ui-sref="main.setting">settings</a>
+            <a ui-sref="edit-profile">edit</a>
           </div>
         </div>
-        <div class="item">
-            <div class="events-box">
-              <h3>upcoming events</h3>
-              <h4>based on your likes</h4>
-              <div class="alerts-box">
-                  <img src="main/assets/images/ic_event_party.png" alt="" />
-                  <span>You haven't liekd any event yet.</span>
-              </div>
-            </div>
-        </div>
-        <div class="item">
-            <div class="events-box">
-              <h3>popular venues</h3>
-              <h4>based on your location and likes</h4>
-              <div class="alerts-box">
-                  <img src="main/assets/images/ic_event_party.png" alt="" />
-                  <span>You haven't liekd any event yet.</span>
-              </div>
-            </div>
+      </div>
+      <div class="item">
+        <div class="events-box">
+          <h3>upcoming events</h3>
+          <h4>based on your likes</h4>
+          <div class="alerts-box">
+            <img src="main/assets/images/ic_event_party.png" alt="" />
+            <span>You haven't liekd any event yet.</span>
+          </div>
         </div>
       </div>
+      <div class="item">
+        <div class="events-box">
+          <h3>popular venues</h3>
+          <h4>based on your location and likes</h4>
+          <div class="alerts-box">
+            <img src="main/assets/images/ic_event_party.png" alt="" />
+            <span>You haven't liekd any event yet.</span>
+          </div>
+        </div>
+      </div>
+    </div>
 
   </ion-content>
 </ion-view>
