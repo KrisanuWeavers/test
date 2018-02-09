@@ -1,6 +1,6 @@
 'use strict';
 angular.module('main')
-  .controller('ListCtrl', function ($log, $scope, $rootScope, $filter, $cordovaGeolocation, $state, $ionicScrollDelegate) {
+  .controller('ListCtrl', function ($localStorage, $log, $scope, $rootScope, $filter, $cordovaGeolocation, $state, $ionicScrollDelegate) {
     var ctrl = this;
     $log.log('Hello from your Controller: ListCtrl in module main:. This is your controller:', this);
     /*==================================================
@@ -97,6 +97,7 @@ angular.module('main')
     };
     $scope.$on('$ionicView.leave', function () {
       $scope.IsMapVisible = false;
+      $ionicScrollDelegate.freezeAllScrolls(false);
     });
     /*************************************
     * END OF MAP

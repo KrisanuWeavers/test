@@ -1467,4 +1467,21 @@ button.done-right {
     animation-duration: 1050ms;
   }
   
-  
+  .profileButton{
+    background: #0173f8;
+    color: #fff;
+    border-radius: 30px;
+    display: block;
+    float: right;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: normal;
+    text-decoration: none;
+  }
+  body.keyboard-open .has-footer{	
+    bottom: 0;
+    }
+    .article-details .list .item-thumbnail-left{
+        margin-top:10px;
+    }

@@ -1,24 +1,19 @@
 <ion-view hide-nav-bar="false" view-title="Article" class="event-details article-details">
+  <ion-nav-buttons side="left">
+    <button ng-click="ctrl.goBack()">
+      <i class="icon ion-ios-arrow-back"></i>
+      <span>Back</span>
+    </button>
+  </ion-nav-buttons>
 
+  <ion-nav-buttons side="right">
+    <button class="share-top">Share</button>
+    <button class="favorite-top {{ctrl.activateFavorite}}" ng-click="ctrl.setArticlelike()">Favorite</button>
+  </ion-nav-buttons>
 
-
-
-
-
-    <ion-nav-buttons side="left">
-        <button ng-click="ctrl.goBack()"><i class="icon ion-ios-arrow-back"></i> <span>Back</span></button>
-      </ion-nav-buttons>
-    
-      <ion-nav-buttons side="right">
-        <button class="share-top">Share</button>
-        <button class="favorite-top">Favorite</button>
-      </ion-nav-buttons>
-    
-      <ion-nav-title>
-          Article
-      </ion-nav-title>
-
-
+  <ion-nav-title>
+    Article
+  </ion-nav-title>
 
   <!-- do you want padding? -->
   <ion-content class="no-padding" id="myFunction">
@@ -27,47 +22,51 @@
     <ion-list>
       <ion-item>
         <div class="event-banner">
-          <img src="main/assets/images/ic_request_birthday_banner.jpg" alt="" />
+          <img ng-src="{{ctrl.eventMainImage}}" alt="" />
         </div>
       </ion-item>
       <ion-item>
         <div class="events-info">
-          <h2>The Best New York City Bars for Singles</h2>
+          <h2>{{ctrl.eventTitle}}</h2>
           <div class="like">
             <i class="ion-android-favorite"></i>
-            <strong>4 likes</strong>
-            <span>Apr 13, 2017</span>
+            <strong>{{ctrl.eventLikesCount}} likes</strong>
+            <span>{{ctrl.eventDate | date : "MMM dd, y" }}</span>
           </div>
-          <h4>Denis testing title</h4>
-          <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature
-            from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in
-            Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through
-            the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections
-            1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in
-            45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of
-            Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
+          <!-- <h4>Denis testing title</h4> -->
+          <p>{{ctrl.eventDetails}}</p>
         </div>
       </ion-item>
-      <ion-item class="item item-thumbnail-left" style="background-image: url(main/assets/images/ic_request_birthday_banner.jpg);">
-        <img src="main/assets/images/thum-img.jpg" alt="" />
-        <h2>Prohibition</h2>
-        <p>Back off, man. I'm a scientist.</p>
-        <a>
-          <img src="main/assets/images/ic_favorite_heart.png" alt="" />
-        </a>
+
+      <!-- <ion-item ng-repeat="blocks in ctrl.blocks"></ion-item> -->
+      <ion-item ng-repeat="block in ctrl.blocks">
+        <div class="item item-thumbnail-left" style="background-image: url({{block.venue.images[0]}});" ng-if="block.type == 'venue'"
+          style="margin-bottom: 10px;">
+          <img ng-src="{{block.venue.images[0]}}" alt="" />
+          <h2>{{block.venue.name}}</h2>
+          <p>{{block.content | limitTo: 30}} {{block.content.length < 30 ? '' : '...'}}</p>
+          <a ng-click="ctrl.setVenuelike(block.venue._id)">
+            <img ng-src="main/assets/images/ic_favorite_heart.png" alt="" />
+          </a>
+        </div>
+        <div class="events-info" ng-if="block.type == 'content'">
+          <p>{{block.content}}</p>
+        </div>
+        <div class="event-banner" ng-if="block.type == 'image'" style="margin-bottom: 10px;margin-top: 10px;">
+          <img ng-src="{{block.content}}" alt="" />
+        </div>
       </ion-item>
+
       <ion-item>
         <div class="events-info">
-          <h4>Denis testing title</h4>
-          <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature
-            from 45 BC</p>
-          <h4>author</h4>
+          <h4>Author</h4>
         </div>
       </ion-item>
       <ion-item class="item item-avatar">
-        <img src="main/assets/images/ic_default_user_photo.png" alt="" />
-        <h2>Denis denis</h2>
+        <img ng-src="{{ctrl.authorImg}}" alt="" />
+        <h2>{{ctrl.authorTitle}}</h2>
       </ion-item>
+
     </ion-list>
   </ion-content>
 </ion-view>

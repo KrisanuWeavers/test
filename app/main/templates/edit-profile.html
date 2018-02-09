@@ -1,43 +1,71 @@
-<ion-view view-title="Edit Profile"  class="pro-list edit-profile">
+<ion-view view-title="Edit Profile" class="pro-list edit-profile">
   <!-- do you want padding? -->
-  <ion-content class="no-padding">
-
-    <!-- content goes here -->
-    <div class="list">
-      <div class="item item-avatar">
-        <img src="main/assets/images/ic_default_user_photo.png" alt="" />
+  <form name="editForm" novalidate>
+    <ion-content class="no-padding">
+      <!-- content goes here -->
+      <div class="list">
+        <div class="item item-avatar">
+          <img ng-src="{{ctrl.profileImageSrc}}" alt="" />
           <h2>Change your profile photo</h2>
           <a href="#" class="upload-photo">upload</a>
           <a href="#" class="take-photo">take photo</a>
-      </div>
-      <div class="item">
-        <h2>required info</h2>
-        <label>First Name</label>
-        <input type="text" name="" value="" />
-        <label>Last Name</label>
-        <input type="text" name="" value="" />
-        <label>Email</label>
-        <input type="email" name="" value="" />
-      </div>
-      <div class="item">
-        <h2>additional info</h2>
-        <label>Birthday</label>
-        <input type="text" name="" value="" />
-        <label>Gender</label>
-        <div class="gender-wrap">
-            <div class="radio-custom"><input type="radio" name="gender" value="male" id="male" /> <label for="male">Male</label></div>
-            <div class="radio-custom"><input type="radio" name="gender" value="female" id="female" /> <label for="female">Female</label></div>
         </div>
-        <label>Website</label>
-        <input type="text" name="" placeholder="http://yourexample.com" />
-        <label>Bio</label>
-        <textarea placeholder="I'm badass that just downloaded the best app ever..."></textarea>
+        <div class="item">
+          <h2>required info</h2>
+          <label>First Name</label>
+          <input type="text" name="fname" ng-model="ctrl.fname" required/>
+          <div class="row">
+            <div class="col">
+              <span style="color:red" ng-show="editForm.fname.$dirty && editForm.fname.$invalid">
+                <span ng-show="editForm.fname.$error.required">First Name is required.</span>
+              </span>
+            </div>
+          </div>
+          <label>Last Name</label>
+          <input type="text" name="lname" ng-model="ctrl.lname" required/>
+          <div class="row">
+            <div class="col">
+              <span style="color:red" ng-show="editForm.lname.$dirty && editForm.lname.$invalid">
+                <span ng-show="editForm.lname.$error.required">Last Name is required.</span>
+              </span>
+            </div>
+          </div>
+          <label>Email</label>
+          <input type="email" name="email" ng-model="ctrl.email" required/>
+          <span style="color:red" ng-show="editForm.email.$dirty && editForm.email.$invalid">
+            <span ng-show="editForm.email.$error.required">Email is required.</span>
+            <span ng-show="editForm.email.$error.email">Invalid email address.</span>
+          </span>
+        </div>
+        <div class="item">
+          <h2>additional info</h2>
+          <label>Birthday</label>
+          <ionic-datepicker ng-click="ctrl.openDatePickerOne()">
+            <input type="text" name="dob" ng-model="ctrl.dob" />
+          </ionic-datepicker>
+          <label>Gender</label>
+          <div class="gender-wrap">
+            <div class="radio-custom">
+              <input type="radio" name="gender" ng-value='"male"' id="male" ng-model="ctrl.gender" />
+              <label for="male">Male</label>
+            </div>
+            <div class="radio-custom">
+              <input type="radio" name="gender" ng-value='"female"' id="female" ng-model="ctrl.gender" />
+              <label for="female">Female</label>
+            </div>
+          </div>
+          <label>Website</label>
+          <input type="text" name="webSite" placeholder="http://yourexample.com" ng-model="ctrl.webSite" />
+          <label>Bio</label>
+          <textarea name="bio" placeholder="I'm badass that just downloaded the best app ever..." ng-model="ctrl.bio"></textarea>
+        </div>
       </div>
-    </div>
 
-  </ion-content>
-  <div class="profile-bottom">
-    <p>Your profile is important</p>
-    <a>Save Changes</a>
-  </div>
+    </ion-content>
+  </form>
+  <ion-footer-bar class="hide-on-keyboard-open">
+    <div class="profile-bottom">
+      <button ng-click="ctrl.saveProfile()" class="profileButton" ng-disabled="editForm.$invalid">Save Changes</button>
+    </div>
+  </ion-footer-bar>
 </ion-view>

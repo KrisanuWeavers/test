@@ -1,9 +1,11 @@
 'use strict';
 angular.module('main', [
   'ionic',
+  'ngStorage',
   'ngCordova',
   'ui.router',
-  'ksSwiper'
+  'ksSwiper',
+  'ionic-datepicker'
   // TODO: load other modules selected during generation
 ])
   .config(function ($stateProvider, $urlRouterProvider) {
@@ -102,6 +104,11 @@ angular.module('main', [
         templateUrl: 'main/templates/change-password.html',
         controller: 'ChangePasswordCtrl as ctrl'
       })
+      .state('reset-password', {
+        url: '/reset-password',
+        templateUrl: 'main/templates/reset-password.html',
+        controller: 'ResetPasswordCtrl as ctrl'
+      })
       .state('phone', {
         url: '/phone',
         templateUrl: 'main/templates/phone.html',
@@ -169,7 +176,7 @@ angular.module('main', [
       //   controller: 'VenueArticlesCtrl as ctrl'
       // })
       .state('articleDetails', {
-        url: '/article-details',
+        url: '/article-details/:id',
         templateUrl: 'main/templates/article-details.html',
         controller: 'ArticleDetailsCtrl as ctrl'
       });
@@ -181,3 +188,4 @@ angular.module('main', [
     $ionicConfigProvider.tabs.position('bottom');
     $ionicConfigProvider.navBar.alignTitle('center');
   });
+
