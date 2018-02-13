@@ -37,6 +37,7 @@ body {
 .bar.bar-header {
     background: #0173f8;
     color: #fff;
+    overflow: hidden;
 }
 .pane {
     background-color: #f7f7ff;
@@ -374,6 +375,7 @@ body {
     }
 }
 .bottom-tab {
+    overflow: hidden;
 .tabs { 
     background: none;
     height: auto;

@@ -4,6 +4,13 @@ angular.module('main')
     var ctrl = this;
     ctrl.OtherImages = [];
     $log.log('Hello from your Controller: VenueInfoCtrl in module main:. This is your controller:', this);
+    $ionicLoading.show({
+      content: 'Loading',
+      animation: 'fade-in',
+      showBackdrop: true,
+      maxWidth: 200,
+      showDelay: 0
+    });
     $scope.$on('$ionicView.afterEnter', function () {
       Store.getListDetails($state.params.placeid)
         .then(function (response) {
