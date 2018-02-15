@@ -37,6 +37,7 @@ body {
 .bar.bar-header {
     background: #0173f8;
     color: #fff;
+    overflow: hidden;
 }
 .pane {
     background-color: #f7f7ff;
@@ -374,6 +375,7 @@ body {
     }
 }
 .bottom-tab {
+    overflow: hidden;
 .tabs { 
     background: none;
     height: auto;
@@ -1495,12 +1497,32 @@ button.done-right {
       
 
         
-          .platform-ios.platform-cordova:not(.fullscreen) .bar-header:not(.bar-subheader) > * {
-            margin-top: 0px !important;
-          }
-          .platform-ios.platform-cordova:not(.fullscreen) .bar-header:not(.bar-subheader) {
-            height: 48px !important;
-          }
-          .platform-ios.platform-cordova:not(.fullscreen) .has-header, .platform-ios.platform-cordova:not(.fullscreen) .bar-subheader {
-            top: 48px !important;
-          }
+.platform-ios.platform-cordova:not(.fullscreen) .bar-header:not(.bar-subheader) > * {
+    margin-top: 0px !important;
+}
+.platform-ios.platform-cordova:not(.fullscreen) .bar-header:not(.bar-subheader) {
+    height: 48px !important;
+}
+.platform-ios.platform-cordova:not(.fullscreen) .has-header, .platform-ios.platform-cordova:not(.fullscreen) .bar-subheader {
+    top: 48px !important;
+}
+.platform-ios.platform-cordova:not(.fullscreen) .tabs-top > .tabs, .platform-ios.platform-cordova:not(.fullscreen) .tabs.tabs-top{
+    top: 0px !important;
+}
+
+.scroll-list-top{
+    top: 70px !important;
+}
+.article-details .list .item-thumbnail-left{
+    margin-top:10px;
+}
+.top-img{
+    height:400px;
+}
+
+.pro-banner-title{
+    font-size:19px!important;
+}
+.clear-top {
+    margin-top: 70px;
+}

@@ -1,8 +1,45 @@
 'use strict';
 angular.module('main')
-  .controller('ListCtrl', function ($localStorage, $log, $scope, $rootScope, $filter, $cordovaGeolocation, $state, $ionicScrollDelegate) {
+  .controller('ListCtrl', function ($localStorage, $log, $scope, $rootScope, $filter, $cordovaGeolocation, $state, $ionicScrollDelegate, Store, $ionicLoading) {
     var ctrl = this;
+    ctrl.list = [];
+    ctrl.listType = '';
     $log.log('Hello from your Controller: ListCtrl in module main:. This is your controller:', this);
+    ctrl.getList = function (type) {
+      if (type === 'venue') {
+        ctrl.listType = type;
+        $ionicLoading.show({
+          content: 'Loading',
+          animation: 'fade-in',
+          showBackdrop: true,
+          maxWidth: 200,
+          showDelay: 0
+        });
+        Store.getVenue()
+          .then(function (response) {
+            $ionicLoading.hide();
+            ctrl.venue = [];
+            $log.log('======Venue List=======');
+            $log.log(response);
+            for (var i = 0; i < response.data.results.length; i++) {
+              ctrl.list.push({ id: response.data.results[i].place_id, name: response.data.results[i].name, icon: response.data.results[i].icon });
+            }
+          }).catch(function (error) {
+            //ctrl.isAnyLatest = false;
+            $ionicLoading.hide();
+            $log.log(error);
+          });
+      } else {
+        ctrl.list = [];
+      }
+    };
+    ctrl.listDetails = function (placeId) {
+      if (ctrl.listType === 'venue') {
+        $state.go('venue.info', { placeid: placeId });
+      } else {
+        $state.go('eventDetails');
+      }
+    };
     /*==================================================
        Active or Inactive Calender Icon
     ==================================================*/

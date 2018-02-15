@@ -33,22 +33,22 @@
   <div class="bar bar-subheader" ng-if="!IsVisible">
     <div class="myslides">
       <ks-swiper-container loop="false" show-nav-buttons="false" slides-per-view="3" space-between="5" pagination-clickable="true">
-        <ks-swiper-slide>
+        <ks-swiper-slide ng-click="ctrl.getList('event')">
           <button>
             featured events
           </button>
         </ks-swiper-slide>
-        <ks-swiper-slide>
+        <ks-swiper-slide ng-click="ctrl.getList('pizza')">
           <button>
             pizza
           </button>
         </ks-swiper-slide>
-        <ks-swiper-slide>
+        <ks-swiper-slide ng-click="ctrl.getList('happy')">
           <button>
             happy hour
           </button>
         </ks-swiper-slide>
-        <ks-swiper-slide>
+        <ks-swiper-slide ng-click="ctrl.getList('venue')">
           <button>
             venues
           </button>
@@ -67,105 +67,28 @@
     </ul>
   </div>
   <!-- Header end -->
-
-  <ion-content class="has-subheader" ng-click="hideKeyBoard()" overflow-scroll="false" scrollbar-x="false">
-    <div id="map-div" ng-show="IsMapVisible">
+ 
+  <ion-content class="has-subheader" ng-click="hideKeyBoard()">
+    <div class="clear-top"></div>
+    <div id="map-div" ng-show="IsMapVisible" class="">
     </div>
     <!-- content goes here -->
     <div class="bgbackdrop" ng-if="IsVisibleSerach">
       <h3>{{searchTxt}}</h3>
     </div>
-    <div class="list">
-      <div class="item item-avatar" ui-sref="eventDetails">
-        <img src="main/assets/images/ic_default_user_photo.png" alt="" />
-        <h2>prohibition</h2>
-        <p>Back off, man. I'm a scientist. Back off, man. man. I'm a scientist. Back off, man. I'm a.</p>
+    <div class="list" ng-if="ctrl.list.length">
+      <div class="item item-avatar"ng-click="ctrl.listDetails(list.id)" ng-repeat="list in ctrl.list">
+        <img ng-src="{{list.icon}}" alt="" style="width:50px;height:50px;"/>
+        <h2>{{list.name}}</h2>
+        <!-- <p>Back off, man. I'm a scientist. Back off, man. man. I'm a scientist. Back off, man. I'm a.</p> -->
         <a>
           <i class="ion-android-favorite"></i>
           <span>1</span>
         </a>
       </div>
-      <div class="item item-avatar" ui-sref="eventDetails">
-        <img src="main/assets/images/ic_default_user_photo.png" alt="" />
-        <h2>prohibition</h2>
-        <p>Back off, man. I'm a scientist. Back off, man. man. I'm a scientist. Back off, man. I'm a.</p>
-        <a>
-          <i class="ion-android-favorite"></i>
-          <span>1</span>
-        </a>
-      </div>
-      <div class="item item-avatar" ui-sref="eventDetails">
-        <img src="main/assets/images/ic_default_user_photo.png" alt="" />
-        <h2>prohibition</h2>
-        <p>Back off, man. I'm a scientist. Back off, man. man. I'm a scientist. Back off, man. I'm a.</p>
-        <a>
-          <i class="ion-android-favorite"></i>
-          <span>1</span>
-        </a>
-      </div>
-      <div class="item item-avatar" ui-sref="eventDetails">
-        <img src="main/assets/images/ic_default_user_photo.png" alt="" />
-        <h2>prohibition</h2>
-        <p>Back off, man. I'm a scientist. Back off, man. man. I'm a scientist. Back off, man. I'm a.</p>
-        <a>
-          <i class="ion-android-favorite"></i>
-          <span>1</span>
-        </a>
-      </div>
-      <div class="item item-avatar" ui-sref="eventDetails">
-        <img src="main/assets/images/ic_default_user_photo.png" alt="" />
-        <h2>prohibition</h2>
-        <p>Back off, man. I'm a scientist. Back off, man. man. I'm a scientist. Back off, man. I'm a.</p>
-        <a>
-          <i class="ion-android-favorite"></i>
-          <span>1</span>
-        </a>
-      </div>
-      <div class="item item-avatar" ui-sref="eventDetails">
-        <img src="main/assets/images/ic_default_user_photo.png" alt="" />
-        <h2>prohibition</h2>
-        <p>Back off, man. I'm a scientist. Back off, man. man. I'm a scientist. Back off, man. I'm a.</p>
-        <a>
-          <i class="ion-android-favorite"></i>
-          <span>1</span>
-        </a>
-      </div>
-      <div class="item item-avatar" ui-sref="eventDetails">
-        <img src="main/assets/images/ic_default_user_photo.png" alt="" />
-        <h2>prohibition</h2>
-        <p>Back off, man. I'm a scientist. Back off, man. man. I'm a scientist. Back off, man. I'm a.</p>
-        <a>
-          <i class="ion-android-favorite"></i>
-          <span>1</span>
-        </a>
-      </div>
-      <div class="item item-avatar" ui-sref="eventDetails">
-        <img src="main/assets/images/ic_default_user_photo.png" alt="" />
-        <h2>prohibition</h2>
-        <p>Back off, man. I'm a scientist. Back off, man. man. I'm a scientist. Back off, man. I'm a.</p>
-        <a>
-          <i class="ion-android-favorite"></i>
-          <span>1</span>
-        </a>
-      </div>
-      <div class="item item-avatar" ui-sref="eventDetails">
-        <img src="main/assets/images/ic_default_user_photo.png" alt="" />
-        <h2>prohibition</h2>
-        <p>Back off, man. I'm a scientist. Back off, man. man. I'm a scientist. Back off, man. I'm a.</p>
-        <a>
-          <i class="ion-android-favorite"></i>
-          <span>1</span>
-        </a>
-      </div>
-      <div class="item item-avatar" ui-sref="eventDetails">
-        <img src="main/assets/images/ic_default_user_photo.png" alt="" />
-        <h2>prohibition</h2>
-        <p>Back off, man. I'm a scientist. Back off, man. man. I'm a scientist. Back off, man. I'm a.</p>
-        <a>
-          <i class="ion-android-favorite"></i>
-          <span>1</span>
-        </a>
-      </div>
+    </div>
+    <div ng-if="!ctrl.list.length">
+      <p>Sorry! No data found...</p>
     </div>
 
   </ion-content>

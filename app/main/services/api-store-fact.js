@@ -179,6 +179,22 @@ angular.module('main')
             return dataParse;
           }
         });
+      },
+      getVenue: function () {
+        return $http.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362 &radius=500&types=food&name=harbour&key=AIzaSyAf466T-Gg01djruv0MXZ4-9ws8MapLhK8', {
+        }).then(function (response) {
+          var data = JSON.stringify(response);
+          var dataParse = JSON.parse(data);
+          return dataParse;
+        });
+      },
+      getListDetails: function (placeId) {
+        return $http.get('https://maps.googleapis.com/maps/api/place/details/json?placeid=' + placeId + '&key=AIzaSyAf466T-Gg01djruv0MXZ4-9ws8MapLhK8', {
+        }).then(function (response) {
+          var data = JSON.stringify(response);
+          var dataParse = JSON.parse(data);
+          return dataParse;
+        });
       }
     };
   });

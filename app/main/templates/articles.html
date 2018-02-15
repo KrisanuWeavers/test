@@ -49,7 +49,7 @@
     <!-- content goes here -->
     <div class="list">
       <div class="pro-banner" ng-if="$index == 0" ng-repeat="articles in ctrl.response track by $index">
-        <h2>{{articles.title}}
+        <h2 class="pro-banner-title">{{articles.title}}
           <span>{{articles.created_on | date : "dd MMM y" }}</span>
         </h2>
         <strong>{{articles.author.name}}</strong>

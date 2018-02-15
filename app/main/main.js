@@ -124,7 +124,7 @@ angular.module('main', [
         }
       })
       .state('eventDetails', {
-        url: '/event-details',
+        url: '/event-details/:placeid',
         templateUrl: 'main/templates/event-details.html',
         controller: 'EventDetailsCtrl as ctrl'
       })
@@ -134,7 +134,7 @@ angular.module('main', [
         templateUrl: 'main/templates/tabs-venue.html'
       })
       .state('venue.info', {
-        url: '/info',
+        url: '/info/:placeid',
         views: {
           'tab-venue-info': {
             templateUrl: 'main/templates/venue-info.html',
