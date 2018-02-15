@@ -1482,6 +1482,25 @@ button.done-right {
   body.keyboard-open .has-footer{	
     bottom: 0;
     }
-    .article-details .list .item-thumbnail-left{
-        margin-top:10px;
-    }
+// .article-details .list .item-thumbnail-left{
+//     margin-top:10px;
+// }
+   
+          .friend-tab-pane {
+            top: 0px !important;
+            .has-tabs-top {
+            top: 70px !important;
+            }
+          }
+      
+
+        
+          .platform-ios.platform-cordova:not(.fullscreen) .bar-header:not(.bar-subheader) > * {
+            margin-top: 0px !important;
+          }
+          .platform-ios.platform-cordova:not(.fullscreen) .bar-header:not(.bar-subheader) {
+            height: 48px !important;
+          }
+          .platform-ios.platform-cordova:not(.fullscreen) .has-header, .platform-ios.platform-cordova:not(.fullscreen) .bar-subheader {
+            top: 48px !important;
+          }

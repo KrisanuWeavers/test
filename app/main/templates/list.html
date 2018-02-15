@@ -1,9 +1,9 @@
-<ion-view hide-nav-bar="false" view-title="" class="pro-list">
+<ion-view hide-nav-bar="false" view-title="" class="pro-list friend-tab-pane">
 
   <!-- Header start -->
 
 
-  <ion-nav-buttons side="left">
+  <ion-nav-buttons side="left" >
     <span class="city-search" ng-show="!IsVisibleSerach">manhattan...</span>
     <div class="search-left" ng-show="IsVisibleSerach">
       <button ng-show="IsVisibleSerach" ng-click="closeSearch()">
@@ -14,7 +14,7 @@
   </ion-nav-buttons>
 
 
-  <ion-nav-buttons side="right">
+  <ion-nav-buttons side="right" >
     <button class="calender-top" ng-click="ShowHide()" ng-show="!IsVisible">
       <strong>{{ctrl.today}}</strong>
     </button>
@@ -67,10 +67,10 @@
     </ul>
   </div>
   <!-- Header end -->
- 
+
   <ion-content class="has-subheader" ng-click="hideKeyBoard()" overflow-scroll="false" scrollbar-x="false">
     <div id="map-div" ng-show="IsMapVisible">
-      </div>
+    </div>
     <!-- content goes here -->
     <div class="bgbackdrop" ng-if="IsVisibleSerach">
       <h3>{{searchTxt}}</h3>
