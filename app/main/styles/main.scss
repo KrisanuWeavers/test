@@ -1494,3 +1494,31 @@ button.done-right {
     .pro-banner-title{
         font-size:19px!important;
     }
+
+    .ksswipeactive{
+        background: #ef8ca0;
+        border: none;
+        display: block;
+        padding: 8px 30px;
+        border-radius: 50px;
+        text-transform: uppercase;
+        text-align: center;
+        font-weight: 700;
+        font-size: 12px;
+        color: #fff;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .ksswipeinactive{
+        background: #fff;
+        border: none;
+        display: block;
+        padding: 8px 30px;
+        border-radius: 50px;
+        text-transform: uppercase;
+        text-align: center;
+        font-weight: 700;
+        font-size: 12px;
+        color: #0173f8;
+        font-family: 'Roboto', sans-serif;
+    }

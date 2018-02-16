@@ -33,27 +33,11 @@
   <div class="bar bar-subheader" ng-if="!IsVisible">
     <div class="myslides">
       <ks-swiper-container loop="false" show-nav-buttons="false" slides-per-view="3" space-between="5" pagination-clickable="true">
-        <ks-swiper-slide ng-click="ctrl.getList('event')">
-          <button>
-            featured events
-          </button>
+        <ks-swiper-slide ng-click="ctrl.getList(header.type,$index)" ng-repeat="header in ctrl.header track by $index">
+          <span ng-class="{ksswipeactive: $index===ctrl.hederIndex,ksswipeinactive: $index!==ctrl.hederIndex}">
+            {{header.name}}
+          </span>
         </ks-swiper-slide>
-        <ks-swiper-slide ng-click="ctrl.getList('pizza')">
-          <button>
-            pizza
-          </button>
-        </ks-swiper-slide>
-        <ks-swiper-slide ng-click="ctrl.getList('happy')">
-          <button>
-            happy hour
-          </button>
-        </ks-swiper-slide>
-        <ks-swiper-slide ng-click="ctrl.getList('venue')">
-          <button>
-            venues
-          </button>
-        </ks-swiper-slide>
-      </ks-swiper-container>
     </div>
 
   </div>
@@ -67,17 +51,17 @@
     </ul>
   </div>
   <!-- Header end -->
- 
+
   <ion-content class="has-subheader" ng-click="hideKeyBoard()">
     <div id="map-div" ng-show="IsMapVisible">
-      </div>
+    </div>
     <!-- content goes here -->
     <div class="bgbackdrop" ng-if="IsVisibleSerach">
       <h3>{{searchTxt}}</h3>
     </div>
     <div class="list" ng-if="ctrl.list.length">
-      <div class="item item-avatar"ng-click="ctrl.listDetails(list.id)" ng-repeat="list in ctrl.list">
-        <img ng-src="{{list.icon}}" alt="" style="width:50px;height:50px;"/>
+      <div class="item item-avatar" ng-click="ctrl.listDetails(list.id)" ng-repeat="list in ctrl.list">
+        <img ng-src="{{list.icon}}" alt="" style="width:50px;height:50px;" />
         <h2>{{list.name}}</h2>
         <!-- <p>Back off, man. I'm a scientist. Back off, man. man. I'm a scientist. Back off, man. I'm a.</p> -->
         <a>
@@ -86,9 +70,9 @@
         </a>
       </div>
     </div>
-    <div ng-if="!ctrl.list.length">
-      <p>Sorry! No data found...</p>
-    </div>
 
+    <div class="alerts-box text-center" ng-if="!ctrl.list.length">
+      <span class="">Sorry! No data found...</span>
+    </div>
   </ion-content>
 </ion-view>

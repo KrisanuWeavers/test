@@ -1,6 +1,6 @@
 'use strict';
 angular.module('main')
-  .controller('EditProfileCtrl', function ($scope, $log, ionicDatePicker, Store, $localStorage, $ionicPopup, $ionicLoading, $state) {
+  .controller('EditProfileCtrl', function ($filter, $scope, $log, ionicDatePicker, Store, $localStorage, $ionicPopup, $ionicLoading, $state) {
     var ctrl = this;
     $log.log('Hello from your Controller: EditProfileCtrl in module main:. This is your controller:', this);
     $ionicLoading.show({
@@ -69,6 +69,9 @@ angular.module('main')
       to: new Date(),
       closeOnSelect: true
     };
+    $scope.$watch('ctrl.email', function (val) {
+      ctrl.email = $filter('lowercase')(val);
+    }, true);
     ctrl.openDatePickerOne = function () {
       ionicDatePicker.openDatePicker(ipObj1);
     };

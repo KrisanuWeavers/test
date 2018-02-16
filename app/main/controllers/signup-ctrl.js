@@ -1,8 +1,11 @@
 'use strict';
 angular.module('main')
-  .controller('SignupCtrl', function ($log, $state, $scope, getSignUpData, Store, $ionicPopup, $ionicLoading) {
+  .controller('SignupCtrl', function ($filter, $log, $state, $scope, getSignUpData, Store, $ionicPopup, $ionicLoading) {
     var ctrl = this;
     $log.log('Hello from your Controller: SignupCtrl in module main:. This is your controller:', this);
+    $scope.$watch('ctrl.email', function (val) {
+      ctrl.email = $filter('lowercase')(val);
+    }, true);
     ctrl.signUp = function () {
       $ionicLoading.show({
         content: 'Loading',

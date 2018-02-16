@@ -3,9 +3,17 @@ angular.module('main')
   .controller('ListCtrl', function ($localStorage, $log, $scope, $rootScope, $filter, $cordovaGeolocation, $state, $ionicScrollDelegate, Store, $ionicLoading) {
     var ctrl = this;
     ctrl.list = [];
+    ctrl.header = [];
+    ctrl.hederIndex = 0;
+    ctrl.header.push({ name: 'featured events', type: 'event' });
+    ctrl.header.push({ name: 'pizza', type: 'pizza' });
+    ctrl.header.push({ name: 'happy hour', type: 'happy' });
+    ctrl.header.push({ name: 'venues', type: 'venue' });
+
     ctrl.listType = '';
     $log.log('Hello from your Controller: ListCtrl in module main:. This is your controller:', this);
-    ctrl.getList = function (type) {
+    ctrl.getList = function (type, $index) {
+      ctrl.hederIndex = $index;
       if (type === 'venue') {
         ctrl.listType = type;
         $ionicLoading.show({
